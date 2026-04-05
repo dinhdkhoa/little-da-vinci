@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/hompage/Hero.astro';
+import Programs from '../components/hompage/Programs.astro';
+import WhyChooseUs from '../components/hompage/WhyChooseUs.astro';
+import Testimonials from '../components/hompage/Testimonials.astro';
+import CTA from '../components/hompage/CTA.astro';
+
+// import { wpquery } from '../lib/wp';
+
+// Example fetching from WP
+// const posts = await wpquery({
+//   query: `
+//     query GetPosts {
+//       posts {
+//         nodes {
+//           id
+//           title
+//           content
+//         }
+//       }
+//     }
+//   `
+// });
+---
+
+<Layout title="ComputerXplorers Southwark | The Digital Playground">
+    <Hero />
+    <Programs />
+    <WhyChooseUs />
+    <Testimonials />
+    <CTA />
+</Layout>

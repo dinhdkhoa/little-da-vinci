@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-on-secondary: #ffffff;
+  --color-on-tertiary: #ffffff;
+  --color-on-primary: #ffffff;
+  --color-inverse-primary: #5bd8dc;
+  --color-on-secondary-container: #606800;
+  --color-tertiary-fixed-dim: #9fd840;
+  --color-primary: #00696c;
+  --color-surface-container: #efeded;
+  --color-surface-tint: #00696c;
+  --color-secondary: #5c6300;
+  --color-primary-fixed: #7af5f9;
+  --color-on-primary-container: #003436;
+  --color-on-error: #ffffff;
+  --color-surface-container-low: #f5f3f3;
+  --color-on-tertiary-container: #203300;
+  --color-secondary-fixed: #dded02;
+  --color-error-container: #ffdad6;
+  --color-inverse-surface: #303030;
+  --color-primary-fixed-dim: #5bd8dc;
+  --color-surface-variant: #e4e2e2;
+  --color-on-secondary-fixed: #1b1d00;
+  --color-tertiary-fixed: #baf55b;
+  --color-secondary-container: #dbeb00;
+  --color-on-background: #1b1c1c;
+  --color-surface-bright: #fbf9f8;
+  --color-surface: #fbf9f8;
+  --color-on-surface-variant: #3d4949;
+  --color-on-secondary-fixed-variant: #454b00;
+  --color-inverse-on-surface: #f2f0f0;
+  --color-outline-variant: #bcc9c9;
+  --color-primary-container: #00a6aa;
+  --color-on-surface: #1b1c1c;
+  --color-on-primary-fixed: #002021;
+  --color-on-tertiary-fixed-variant: #344e00;
+  --color-tertiary-container: #70a400;
+  --color-on-error-container: #93000a;
+  --color-background: #fbf9f8;
+  --color-outline: #6c7a7a;
+  --color-on-tertiary-fixed: #121f00;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-highest: #e4e2e2;
+  --color-on-primary-fixed-variant: #004f51;
+  --color-surface-container-high: #eae8e7;
+  --color-surface-dim: #dbd9d9;
+  --color-tertiary: #466800;
+  --color-secondary-fixed-dim: #c2d000;
+  --color-error: #ba1a1a;
+
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Be Vietnam Pro", sans-serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+    
+  --radius-DEFAULT: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+}
+
+@layer utilities {
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .organic-wave {
+        clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+    }
+
+    .blob-mask {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
