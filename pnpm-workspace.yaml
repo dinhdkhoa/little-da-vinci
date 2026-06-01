@@ -1,0 +1,4 @@
+# pnpm-workspace.yaml
+minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - '@rollup/rollup-*'
