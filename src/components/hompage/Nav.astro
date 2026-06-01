@@ -1,126 +1,29 @@
 ---
 import { getLangFromUrl, useTranslations, useTranslatedPath } from '../../i18n/utils';
-import { languages } from '../../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
-
-const navItems = [
-  {
-    name: t('nav.programs'),
-    href: translatePath('/programs'),
-    dropdown: [
-      { name: t('nav.dropdown.programs.afterschool'), href: translatePath('/programs/after-school'), icon: "school" },
-      { name: t('nav.dropdown.programs.holiday'), href: translatePath('/programs/holiday'), icon: "celebration" },
-      { name: t('nav.dropdown.programs.weekend'), href: translatePath('/programs/weekend'), icon: "weekend" },
-      { name: t('nav.dropdown.programs.curriculum'), href: translatePath('/programs/curriculum'), icon: "menu_book" },
-    ],
-  },
-  {
-    name: t('nav.schools'),
-    href: translatePath('/schools'),
-    dropdown: [
-      { name: t('nav.dropdown.schools.primary'), href: translatePath('/schools/primary'), icon: "child_care" },
-      { name: t('nav.dropdown.schools.secondary'), href: translatePath('/schools/secondary'), icon: "architecture" },
-      { name: t('nav.dropdown.schools.sen'), href: translatePath('/schools/sen'), icon: "clinical_notes" },
-      { name: t('nav.dropdown.schools.virtual'), href: translatePath('/schools/virtual'), icon: "devices" },
-    ],
-  },
-  {
-    name: t('nav.workshops'),
-    href: translatePath('/workshops'),
-    dropdown: [
-      { name: t('nav.dropdown.workshops.robotics'), href: translatePath('/workshops/robotics'), icon: "robot_2" },
-      { name: t('nav.dropdown.workshops.coding'), href: translatePath('/workshops/coding'), icon: "code" },
-      { name: t('nav.dropdown.workshops.3d'), href: translatePath('/workshops/3d'), icon: "3d_rotation" },
-      { name: t('nav.dropdown.workshops.game'), href: translatePath('/workshops/game'), icon: "sports_esports" },
-    ],
-  },
-  {
-    name: t('nav.about'),
-    href: translatePath('/about'),
-    dropdown: [
-      { name: t('nav.dropdown.about.story'), href: translatePath('/about/story'), icon: "history_edu" },
-      { name: t('nav.dropdown.about.team'), href: translatePath('/about/team'), icon: "groups" },
-      { name: t('nav.dropdown.about.careers'), href: translatePath('/about/careers'), icon: "work" },
-      { name: t('nav.dropdown.about.contact'), href: translatePath('/about/contact'), icon: "mail" },
-    ],
-  },
-];
 ---
 
-<!-- TopNavBar -->
-<nav
-    class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-on-primary-fixed-variant/80 backdrop-blur-md shadow-[0px_20px_40px_rgba(0,105,108,0.06)] border-b border-outline-variant/10">
-    <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-        <a href={translatePath('/')} class="text-2xl font-black text-primary dark:text-inverse-primary tracking-tighter font-headline">
-            ComputerXplorers
-        </a>
-        
-        <!-- Navigation Links -->
-        <div class="hidden md:flex items-center gap-1 font-headline font-bold tracking-tight">
-            {navItems.map((item) => (
-                <div class="group relative px-3 py-4">
-                    <button class="flex items-center gap-1 text-on-surface-variant dark:text-inverse-on-surface hover:text-inverse-primary transition-all duration-300 hover:scale-105">
-                        {item.name}
-                        <span class="material-symbols-outlined text-lg transition-transform duration-300 group-hover:rotate-180">expand_more</span>
-                    </button>
-                    
-                    <!-- Dropdown Menu -->
-                    <div class="absolute left-0 top-[calc(100%-10px)] w-72 pt-4 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
-                        <div class="bg-surface-container-lowest dark:bg-inverse-surface rounded-2xl shadow-2xl border border-outline-variant/30 dark:border-outline/30 p-2 overflow-hidden">
-                            {item.dropdown.map((subItem) => (
-                                <a 
-                                    href={subItem.href}
-                                    class="flex items-center gap-4 p-3 rounded-xl hover:bg-surface-container-low dark:hover:bg-surface-variant group/item transition-colors"
-                                >
-                                    <div class="w-10 h-10 rounded-full bg-surface-container-high dark:bg-surface-variant flex items-center justify-center text-on-surface-variant group-hover/item:bg-primary group-hover/item:text-on-primary transition-all">
-                                        <span class="material-symbols-outlined text-xl">{subItem.icon}</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-bold text-on-surface dark:text-inverse-on-surface">{subItem.name}</p>
-                                    </div>
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
-
-        <!-- Right Side Actions -->
-        <div class="flex items-center gap-4">
-            <!-- Language Switcher -->
-            <div class="relative group">
-                <button class="flex items-center gap-2 px-3 py-2 rounded-full border border-outline-variant/30 text-on-surface-variant dark:text-inverse-on-surface hover:bg-surface-container-low transition-all">
-                    <span class="material-symbols-outlined text-xl">language</span>
-                    <span class="text-sm uppercase font-bold">{lang}</span>
-                </button>
-                <div class="absolute right-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                    <div class="bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-outline-variant/30 p-2 min-w-[120px]">
-                        {Object.entries(languages).map(([code, label]) => (
-                            <a 
-                                href={translatePath('/', code)}
-                                class={`block px-3 py-2 rounded-lg text-sm font-bold transition-colors ${lang === code ? 'bg-primary text-white' : 'text-on-surface-variant hover:bg-surface-container-low'}`}
-                            >
-                                {label}
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            <button
-                class="hidden lg:block px-6 py-2 rounded-full font-headline font-bold text-on-surface-variant dark:text-inverse-on-surface hover:text-primary transition-all duration-300 hover:scale-105">{t('nav.contact')}</button>
-            <button
-                class="px-6 py-2 rounded-full bg-secondary-container text-on-secondary-container font-headline font-bold shadow-sm transition-all duration-300 hover:scale-105 active:scale-95">{t('nav.book')}</button>
-        </div>
+<header class="w-full bg-white py-4 border-b border-gray-100 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 w-full flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-12 h-12 bg-gray-200 rounded flex items-center justify-center text-xs font-bold text-gray-500">
+        <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"></path>
+        </svg>
+      </div>
+      <span class="font-bold text-lg leading-tight uppercase">Little<br/>Da Vinci</span>
     </div>
-</nav>
-
-<style>
-    .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
-</style>
+    <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+      <a class="hover:text-primary transition-colors" href={translatePath('/')}>Trang Chủ</a>
+      <a class="hover:text-primary transition-colors" href="#">Khóa Học</a>
+      <a class="hover:text-primary transition-colors" href="#">Đội Ngũ</a>
+      <a class="hover:text-primary transition-colors" href="#">Sự Kiện</a>
+    </nav>
+    <a class="bg-primary hover:bg-green-500 text-white font-semibold py-2 px-6 rounded-full text-sm transition-colors shadow-sm" href="#register">
+      Đăng Ký Ngay
+    </a>
+  </div>
+</header>

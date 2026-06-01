@@ -23,19 +23,16 @@ const lang = getLangFromUrl(Astro.url);
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com" rel="preconnect" />
         <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap"
-            rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
         <!-- Icons -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-            rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 	</head>
-	<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+	<body class="antialiased selection:bg-primary selection:text-white font-sans text-onSurface bg-white">
         <Nav />
-        <main class="pt-24 overflow-hidden">
+        <main>
 		    <slot />
         </main>
         <Footer />
 	</body>
 </html>
+

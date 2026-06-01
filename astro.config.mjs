@@ -2,6 +2,8 @@ import { defineConfig, passthroughImageService, fontProviders } from "astro/conf
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
+    site: 'https://dinhdkhoa.github.io',
+    base: '/little-da-vinci',
     prefetch: true,
     vite: {
         plugins: [tailwindcss()],
