@@ -1,4 +1,3 @@
-# pnpm-workspace.yaml
-minimumReleaseAge: 1440
-minimumReleaseAgeExclude:
-  - '@rollup/rollup-*'
+allowBuilds:
+  esbuild: true
+  sharp: true
