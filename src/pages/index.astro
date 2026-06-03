@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/hompage/Hero.astro';
+import HowWeTeach from '../components/hompage/HowWeTeach.astro';
+import Programs from '../components/hompage/Programs.astro';
+import Gallery from '../components/hompage/Gallery.astro';
+import Testimonials from '../components/hompage/Testimonials.astro';
+import Partners from '../components/hompage/Partners.astro';
+import CTA from '../components/hompage/CTA.astro';
+
+// import { wpquery } from '../lib/wp';
+
+// Example fetching from WP
+// const posts = await wpquery({
+//   query: `
+//     query GetPosts {
+//       posts {
+//         nodes {
+//           id
+//           title
+//           content
+//         }
+//       }
+//     }
+//   `
+// });
+---
+
+<Layout title="Little Da Vinci - Tech Academy">
+    <Hero />
+    <HowWeTeach />
+    <Programs />
+    <Gallery />
+    <Testimonials />
+    <Partners />
+    <CTA />
+</Layout>
+
