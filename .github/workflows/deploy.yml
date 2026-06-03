@@ -37,11 +37,10 @@ jobs:
       - name: Build site
         run: pnpm build
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: github-pages
-          path: dist 
+          path: dist
 
   deploy:
     needs: build
@@ -53,3 +52,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
