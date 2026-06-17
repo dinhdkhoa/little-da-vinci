@@ -1,30 +1,31 @@
 ---
+const { data, lang } = Astro.props;
 ---
 
 <section class="py-20 bg-secondary">
   <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
-    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-white">Gallery</h2>
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-white">{data.title[lang]}</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[500px]">
       <!-- Large Left Image -->
       <div class="rounded-xl h-64 md:h-full overflow-hidden col-span-1 shadow-lg">
-        <img alt="Gallery Image 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh6sX9jbcTGnxrSmP76T2z4U9OpTFUQgjumOFvoOedqpWuqTogwmSyslkZsuaqyFHX6XXh0qFB2vDVi0_zFpCkUCQ2ufsLzW1OGhPxgAjD7xiw0L16ncpyqZJGJFe-WikJcuG_ycZWLHHW02T2kv9hZuXjT3dlyCgHHkuIjZRqb252aYCfk-7HeFbJM8I1LwJ41GQZ-MNibbHOq2NQF6s1YJSfwVYZjwsA5hULPEPGS075NZXavrr_RuTKrKlLuh2LG2QzEm6s_-SL"/>
+        <img alt="Gallery Image 1" class="w-full h-full object-cover" src={data.images[0]?.secure_url}/>
       </div>
       <!-- Stacked Center Images -->
       <div class="flex flex-col gap-6 col-span-1 md:h-full">
         <div class="rounded-xl h-48 md:flex-1 md:min-h-0 overflow-hidden shadow-lg">
-          <img alt="Gallery Image 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCHbbOLNFbzspouKFTQXZTgkuYAvJLJtt5PZ-rIYeEctsdC0D4UN8SBy3qacfqiICYJxr6XS12L5zsDeWCyZe41VRGbQfiQ_9-0_rfQaZEWK4MzW-Peu_yQ-nhZd9YfdaPYUMMNHFALL2R0YWrGU164hCdvCUWw2GMU7fcfer0aVBvQkH-m664aS2pRmCZBRSe3ln9PNZc2xyL6CDQlPFDyhlG-KssrdYw6V-RljoE0VRbFm05KHbvguM2Bo7CTJ57Hgvo6VDcFAxo"/>
+          <img alt="Gallery Image 2" class="w-full h-full object-cover" src={data.images[1]?.secure_url}/>
         </div>
         <div class="rounded-xl h-48 md:flex-1 md:min-h-0 overflow-hidden shadow-lg">
-          <img alt="Gallery Image 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc4BNjJc7fqQQdSHgLpNbkypfnroe6CwGOH2kzlZjwgyiXfjZAc7Q0YfKFQ7rMswFtiynQ1petrvRRYXGM75-cHnpFBCJ3Vz66zAdeB5QYs-wDjl4Enf85rB6DoW-kT5JmIQzESWKgVlH-Tkit9I9CAJ4qlQNd0CJ51LpOKTEtszc3mB5eItHTqA4NtVrf_wR8zQA4EUabRxyYRPogYVrs7XSCW9DwUe0DX3csmBOhgpcDpMluNXgjQ6F2CVx0QeXUCz8-e8cNVoCU"/>
+          <img alt="Gallery Image 3" class="w-full h-full object-cover" src={data.images[2]?.secure_url}/>
         </div>
       </div>
       <!-- Large Right Image -->
       <div class="rounded-xl h-64 md:h-full overflow-hidden col-span-1 shadow-lg">
-        <img alt="Gallery Image 4" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFZQ5Y_GsbFqsIk_-ov7441vYs-HMPxgJDD1U9CgS7EcJv4-FupdGSQDUCi_q22CQGTk37Qz-7UeGQK66y3xZeZ23NIh_8pi-_dqkOvDDXi8hs-XPABY8UXFlgJ8pe8CIugn0fmmsHfmHxHuW4ZRU1mV6dmnqLv7FVdKrtlseJR_P3fiaEDegJGYcNZd6aVMy-LGy_rFKsEwysJ8_EE21DVHOOfiDpvYjsDxJTOh0ru1WnsvTVCUiCKI4V1_iadjpvroxPIlLt9A25"/>
+        <img alt="Gallery Image 4" class="w-full h-full object-cover" src={data.images[3]?.secure_url}/>
       </div>
     </div>
     <div class="mt-32 h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-      <img alt="Gallery Image 5" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvQNO0Xad-D0zY-o0wYGjH4ahlVm0CydANxXKXYFoOIRbTbdJh94k6BRsi-exTfIO_Xbo4YgJDtWm1YpSa3XdDBbrmDaHIlco9fpk3jRwYkoh1nPUZ754gHoCFv4ccTje9h4xWXBHRwh4KeEaJWKy0EPzxW8kBmwh0yNDeB_Yui1fkFAae62843PHsEzFj8bEz8uvH8Bjc3UGqPt3kafGL-GMKfVP13UL43NVNrIKwPb1wvBRMHGf21ejH-wq86hq8l0M21pIzIWPb"/>
+      <img alt="Gallery Image 5" class="w-full h-full object-cover" src={data.images[4]?.secure_url}/>
     </div>
   </div>
 </section>

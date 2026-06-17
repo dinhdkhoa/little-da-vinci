@@ -1,0 +1,14 @@
+---
+import { makePage } from "@keystatic/astro/ui";
+import config from "../../../keystatic.config";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  return [];
+}
+
+const Keystatic = makePage(config);
+---
+
+<Keystatic />

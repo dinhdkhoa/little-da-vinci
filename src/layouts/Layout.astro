@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Nav from '../components/hompage/Nav.astro';
 import Footer from '../components/hompage/Footer.astro';
 import { getLangFromUrl } from '../i18n/utils';
+import { Font } from 'astro:assets';
 
 interface Props {
 	title: string;
@@ -21,9 +22,7 @@ const lang = getLangFromUrl(Astro.url);
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com" rel="preconnect" />
-        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+        <Font cssVariable="--font-phudu" />
         <!-- Icons -->
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 	</head>

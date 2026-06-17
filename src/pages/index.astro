@@ -7,32 +7,18 @@ import Gallery from '../components/hompage/Gallery.astro';
 import Testimonials from '../components/hompage/Testimonials.astro';
 import Partners from '../components/hompage/Partners.astro';
 import CTA from '../components/hompage/CTA.astro';
+import homeData from '../content/home.json';
 
-// import { wpquery } from '../lib/wp';
-
-// Example fetching from WP
-// const posts = await wpquery({
-//   query: `
-//     query GetPosts {
-//       posts {
-//         nodes {
-//           id
-//           title
-//           content
-//         }
-//       }
-//     }
-//   `
-// });
+const lang = Astro.currentLocale ?? "vi";
 ---
 
 <Layout title="Little Da Vinci - Tech Academy">
-    <Hero />
-    <HowWeTeach />
-    <Programs />
-    <Gallery />
-    <Testimonials />
+    <Hero data={homeData.hero} lang={lang} />
+    <HowWeTeach data={homeData.howWeTeach} lang={lang} />
+    <Programs data={homeData.programs} lang={lang} />
+    <Gallery data={homeData.gallery} lang={lang} />
+    <Testimonials data={homeData.testimonials} lang={lang} />
     <Partners />
-    <CTA />
+    <CTA data={homeData.cta} lang={lang} />
 </Layout>
 

@@ -1,0 +1,233 @@
+{
+  "hero": {
+    "tagline": {
+      "en": "Enroll Now: Microbit K01 Live",
+      "vi": "Đang Chiêu Sinh: Lớp Microbit K03 Live"
+    },
+    "title": {
+      "en": "Lorem ipsum dolor sit amet, <span class=\"text-primary\">CONSECTETUR</span> adipiscing elit Sed convallis lectus",
+      "vi": "Lorem ipsum dolor sit amet, <span class=\"text-primary\">CONSECTETUR</span> adipiscing elit Sed convallis lectus"
+    },
+    "description": {
+      "en": "Không cầm tay chỉ việc, không mang đến những bài học khô khan khó nhằn, chúng tôi biến công nghệ thành một \"sân chơi\" để trẻ tự do khám phá và phá vỡ mọi giới hạn tư duy thông thường.\n\nTại đây, mỗi bạn nhỏ đều được khơi gợi niềm đam mê sáng tạo để tự tay thiết kế và tạo nên những sản phẩm hữu ích cho cuộc sống thường nhật.",
+      "vi": "Không cầm tay chỉ việc, không mang đến những bài học khô khan khó nhằn, chúng tôi biến công nghệ thành một \"sân chơi\" để trẻ tự do khám phá và phá vỡ mọi giới hạn tư duy thông thường.\n\nTại đây, mỗi bạn nhỏ đều được khơi gợi niềm đam mê sáng tạo để tự tay thiết kế và tạo nên những sản phẩm hữu ích cho cuộc sống thường nhật."
+    },
+    "cta1_label": {
+      "en": "Register Now",
+      "vi": "Đăng Ký Ngay"
+    },
+    "cta1_link": "#register",
+    "cta2_label": {
+      "en": "Learn More",
+      "vi": "Tìm Hiểu Thêm"
+    },
+    "cta2_link": "#",
+    "image": {
+      "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDCHbbOLNFbzspouKFTQXZTgkuYAvJLJtt5PZ-rIYeEctsdC0D4UN8SBy3qacfqiICYJxr6XS12L5zsDeWCyZe41VRGbQfiQ_9-0_rfQaZEWK4MzW-Peu_yQ-nhZd9YfdaPYUMMNHFALL2R0YWrGU164hCdvCUWw2GMU7fcfer0aVBvQkH-m664aS2pRmCZBRSe3ln9PNZc2xyL6CDQlPFDyhlG-KssrdYw6V-RljoE0VRbFm05KHbvguM2Bo7CTJ57Hgvo6VDcFAxo",
+      "public_id": ""
+    }
+  },
+  "howWeTeach": {
+    "title": {
+      "en": "How We Teach",
+      "vi": "Cách Chúng Tôi Giảng Dạy"
+    },
+    "description": {
+      "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna.",
+      "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna."
+    },
+    "steps": [
+      {
+        "icon": "lightbulb",
+        "title": {
+          "en": "Inspire Passion",
+          "vi": "Khơi Gợi Đam Mê"
+        },
+        "description": {
+          "en": "Tìm kiếm sở thích và thế mạnh riêng của từng học viên thông qua các hoạt động trải nghiệm.",
+          "vi": "Tìm kiếm sở thích và thế mạnh riêng của từng học viên thông qua các hoạt động trải nghiệm."
+        }
+      },
+      {
+        "icon": "architecture",
+        "title": {
+          "en": "Build Foundation",
+          "vi": "Xây Dựng Nền Tảng"
+        },
+        "description": {
+          "en": "Học các nguyên lý cơ bản về lập trình và tư duy logic một cách trực quan sinh động.",
+          "vi": "Học các nguyên lý cơ bản về lập trình và tư duy logic một cách trực quan sinh động."
+        }
+      },
+      {
+        "icon": "rocket_launch",
+        "title": {
+          "en": "Execute Ideas",
+          "vi": "Thực Thi Ý Tưởng"
+        },
+        "description": {
+          "en": "Tự tay thiết kế và lập trình các sản phẩm công nghệ thực tế từ những ý tưởng cá nhân.",
+          "vi": "Tự tay thiết kế và lập trình các sản phẩm công nghệ thực tế từ những ý tưởng cá nhân."
+        }
+      },
+      {
+        "icon": "workspace_premium",
+        "title": {
+          "en": "Shine Results",
+          "vi": "Tỏa Sáng Thành Quả"
+        },
+        "description": {
+          "en": "Trình bày dự án cuối khóa và nhận chứng chỉ công nhận sự nỗ lực học tập của bé.",
+          "vi": "Trình bày dự án cuối khóa và nhận chứng chỉ công nhận sự nỗ lực học tập của bé."
+        }
+      }
+    ]
+  },
+  "programs": {
+    "title": {
+      "en": "Our Programs",
+      "vi": "Các Khoá Học"
+    },
+    "quote": {
+      "en": "\"I have no special talents. I am only passionately curious\"",
+      "vi": "\"I have no special talents. I am only passionately curious\""
+    },
+    "courses": [
+      {
+        "image": {
+          "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBh6sX9jbcTGnxrSmP76T2z4U9OpTFUQgjumOFvoOedqpWuqTogwmSyslkZsuaqyFHX6XXh0qFB2vDVi0_zFpCkUCQ2ufsLzW1OGhPxgAjD7xiw0L16ncpyqZJGJFe-WikJcuG_ycZWLHHW02T2kv9hZuXjT3dlyCgHHkuIjZRqb252aYCfk-7HeFbJM8I1LwJ41GQZ-MNibbHOq2NQF6s1YJSfwVYZjwsA5hULPEPGS075NZXavrr_RuTKrKlLuh2LG2QzEm6s_-SL",
+          "public_id": ""
+        },
+        "ageRange": { "en": "8 - 13 Years Old", "vi": "8 - 13 Tuổi" },
+        "title": { "en": "MICROBIT", "vi": "MICROBIT" },
+        "description": { "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.", "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt." },
+        "tags": [
+          { "en": "IoT", "vi": "IoT" },
+          { "en": "Hardware", "vi": "Hardware" }
+        ]
+      },
+      {
+        "image": {
+          "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDvQNO0Xad-D0zY-o0wYGjH4ahlVm0CydANxXKXYFoOIRbTbdJh94k6BRsi-exTfIO_Xbo4YgJDtWm1YpSa3XdDBbrmDaHIlco9fpk3jRwYkoh1nPUZ754gHoCFv4ccTje9h4xWXBHRwh4KeEaJWKy0EPzxW8kBmwh0yNDeB_Yui1fkFAae62843PHsEzFj8bEz8uvH8Bjc3UGqPt3kafGL-GMKfVP13UL43NVNrIKwPb1wvBRMHGf21ejH-wq86hq8l0M21pIzIWPb",
+          "public_id": ""
+        },
+        "ageRange": { "en": "7 - 13 Years Old", "vi": "7 - 13 Tuổi" },
+        "title": { "en": "SCRATCH", "vi": "SCRATCH" },
+        "description": { "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.", "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt." },
+        "tags": [
+          { "en": "IoT", "vi": "IoT" },
+          { "en": "Hardware", "vi": "Hardware" }
+        ]
+      },
+      {
+        "image": {
+          "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCc4BNjJc7fqQQdSHgLpNbkypfnroe6CwGOH2kzlZjwgyiXfjZAc7Q0YfKFQ7rMswFtiynQ1petrvRRYXGM75-cHnpFBCJ3Vz66zAdeB5QYs-wDjl4Enf85rB6DoW-kT5JmIQzESWKgVlH-Tkit9I9CAJ4qlQNd0CJ51LpOKTEtszc3mB5eItHTqA4NtVrf_wR8zQA4EUabRxyYRPogYVrs7XSCW9DwUe0DX3csmBOhgpcDpMluNXgjQ6F2CVx0QeXUCz8-e8cNVoCU",
+          "public_id": ""
+        },
+        "ageRange": { "en": "7 - 18 Years Old", "vi": "7 - 18 Tuổi" },
+        "title": { "en": "MINECRAFT EDUCATION", "vi": "MINECRAFT EDUCATION" },
+        "description": { "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.", "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt." },
+        "tags": [
+          { "en": "IoT", "vi": "IoT" },
+          { "en": "Hardware", "vi": "Hardware" }
+        ]
+      },
+      {
+        "image": {
+          "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBFZQ5Y_GsbFqsIk_-ov7441vYs-HMPxgJDD1U9CgS7EcJv4-FupdGSQDUCi_q22CQGTk37Qz-7UeGQK66y3xZeZ23NIh_8pi-_dqkOvDDXi8hs-XPABY8UXFlgJ8pe8CIugn0fmmsHfmHxHuW4ZRU1mV6dmnqLv7FVdKrtlseJR_P3fiaEDegJGYcNZd6aVMy-LGy_rFKsEwysJ8_EE21DVHOOfiDpvYjsDxJTOh0ru1WnsvTVCUiCKI4V1_iadjpvroxPIlLt9A25",
+          "public_id": ""
+        },
+        "ageRange": { "en": "6 - 12 Years Old", "vi": "6 - 12 Tuổi" },
+        "title": { "en": "ROBOT EDISON", "vi": "ROBOT EDISON" },
+        "description": { "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.", "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt." },
+        "tags": [
+          { "en": "Robot", "vi": "Robot" },
+          { "en": "Logic", "vi": "Logic" }
+        ]
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "title": {
+      "en": "Why Choose ComputerXplorers?",
+      "vi": "Tại Sao Chọn Chúng Tôi?"
+    },
+    "features": [
+      {
+        "icon": "verified_user",
+        "title": { "en": "Expert Tutors", "vi": "Giáo Viên Tận Tâm" },
+        "description": { "en": "Our passionate educators are industry professionals and trained specialists who know how to make complex tech simple.", "vi": "Our passionate educators are industry professionals and trained specialists who know how to make complex tech simple." }
+      },
+      {
+        "icon": "rocket_launch",
+        "title": { "en": "Cutting-Edge Curriculum", "vi": "Giáo Trình Cập Nhật" },
+        "description": { "en": "From AI to Robotics, our curriculum is constantly evolving to match the rapid pace of real-world technology.", "vi": "From AI to Robotics, our curriculum is constantly evolving to match the rapid pace of real-world technology." }
+      },
+      {
+        "icon": "mood",
+        "title": { "en": "Fun & Engaging Learning", "vi": "Học Mà Chơi" },
+        "description": { "en": "Education doesn't have to be boring. We prioritize play, collaboration, and high-energy exploration.", "vi": "Education doesn't have to be boring. We prioritize play, collaboration, and high-energy exploration." }
+      }
+    ]
+  },
+  "gallery": {
+    "title": {
+      "en": "Gallery",
+      "vi": "Thư Viện Ảnh"
+    },
+    "images": [
+      { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBh6sX9jbcTGnxrSmP76T2z4U9OpTFUQgjumOFvoOedqpWuqTogwmSyslkZsuaqyFHX6XXh0qFB2vDVi0_zFpCkUCQ2ufsLzW1OGhPxgAjD7xiw0L16ncpyqZJGJFe-WikJcuG_ycZWLHHW02T2kv9hZuXjT3dlyCgHHkuIjZRqb252aYCfk-7HeFbJM8I1LwJ41GQZ-MNibbHOq2NQF6s1YJSfwVYZjwsA5hULPEPGS075NZXavrr_RuTKrKlLuh2LG2QzEm6s_-SL", "public_id": "" },
+      { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDCHbbOLNFbzspouKFTQXZTgkuYAvJLJtt5PZ-rIYeEctsdC0D4UN8SBy3qacfqiICYJxr6XS12L5zsDeWCyZe41VRGbQfiQ_9-0_rfQaZEWK4MzW-Peu_yQ-nhZd9YfdaPYUMMNHFALL2R0YWrGU164hCdvCUWw2GMU7fcfer0aVBvQkH-m664aS2pRmCZBRSe3ln9PNZc2xyL6CDQlPFDyhlG-KssrdYw6V-RljoE0VRbFm05KHbvguM2Bo7CTJ57Hgvo6VDcFAxo", "public_id": "" },
+      { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCc4BNjJc7fqQQdSHgLpNbkypfnroe6CwGOH2kzlZjwgyiXfjZAc7Q0YfKFQ7rMswFtiynQ1petrvRRYXGM75-cHnpFBCJ3Vz66zAdeB5QYs-wDjl4Enf85rB6DoW-kT5JmIQzESWKgVlH-Tkit9I9CAJ4qlQNd0CJ51LpOKTEtszc3mB5eItHTqA4NtVrf_wR8zQA4EUabRxyYRPogYVrs7XSCW9DwUe0DX3csmBOhgpcDpMluNXgjQ6F2CVx0QeXUCz8-e8cNVoCU", "public_id": "" },
+      { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBFZQ5Y_GsbFqsIk_-ov7441vYs-HMPxgJDD1U9CgS7EcJv4-FupdGSQDUCi_q22CQGTk37Qz-7UeGQK66y3xZeZ23NIh_8pi-_dqkOvDDXi8hs-XPABY8UXFlgJ8pe8CIugn0fmmsHfmHxHuW4ZRU1mV6dmnqLv7FVdKrtlseJR_P3fiaEDegJGYcNZd6aVMy-LGy_rFKsEwysJ8_EE21DVHOOfiDpvYjsDxJTOh0ru1WnsvTVCUiCKI4V1_iadjpvroxPIlLt9A25", "public_id": "" },
+      { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDvQNO0Xad-D0zY-o0wYGjH4ahlVm0CydANxXKXYFoOIRbTbdJh94k6BRsi-exTfIO_Xbo4YgJDtWm1YpSa3XdDBbrmDaHIlco9fpk3jRwYkoh1nPUZ754gHoCFv4ccTje9h4xWXBHRwh4KeEaJWKy0EPzxW8kBmwh0yNDeB_Yui1fkFAae62843PHsEzFj8bEz8uvH8Bjc3UGqPt3kafGL-GMKfVP13UL43NVNrIKwPb1wvBRMHGf21ejH-wq86hq8l0M21pIzIWPb", "public_id": "" }
+    ]
+  },
+  "testimonials": {
+    "items": [
+      {
+        "content": {
+          "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna.",
+          "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna."
+        },
+        "author": { "en": "John Doe", "vi": "Phụ Huynh" }
+      },
+      {
+        "content": {
+          "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna.",
+          "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna."
+        },
+        "author": { "en": "Jane Doe", "vi": "Phụ Huynh" }
+      },
+      {
+        "content": {
+          "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna.",
+          "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna."
+        },
+        "author": { "en": "Smith", "vi": "Phụ Huynh" }
+      }
+    ]
+  },
+  "cta": {
+    "title": {
+      "en": "Register Now",
+      "vi": "Đăng Ký Ngay"
+    },
+    "description": {
+      "en": "Register to get a free consultation on programming courses for Kids.",
+      "vi": "Đăng ký để nhận tư vấn khóa học lập trình cho Trẻ Em miễn phí. Little Da Vinci sẽ liên hệ bạn trong thời gian sớm nhất."
+    },
+    "address": {
+      "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt."
+    },
+    "email": {
+      "en": "info@littledavinci.com",
+      "vi": "info@littledavinci.com"
+    },
+    "phone": {
+      "en": "(+84) 000-000-000",
+      "vi": "(+84) 000-000-000"
+    }
+  }
+}

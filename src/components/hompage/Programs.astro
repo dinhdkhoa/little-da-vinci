@@ -1,77 +1,34 @@
 ---
+const { data, lang } = Astro.props;
 ---
 
 <section class="py-20 bg-surface">
   <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-2">Các Khoá Học</h2>
-      <p class="text-onSurfaceVariant italic">"I have no special talents. I am only passionately curious"</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-2">{data.title[lang]}</h2>
+      <p class="text-onSurfaceVariant italic">{data.quote[lang]}</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Course Card 1 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
-        <div class="h-48 relative">
-          <img alt="Microbit Course" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh6sX9jbcTGnxrSmP76T2z4U9OpTFUQgjumOFvoOedqpWuqTogwmSyslkZsuaqyFHX6XXh0qFB2vDVi0_zFpCkUCQ2ufsLzW1OGhPxgAjD7xiw0L16ncpyqZJGJFe-WikJcuG_ycZWLHHW02T2kv9hZuXjT3dlyCgHHkuIjZRqb252aYCfk-7HeFbJM8I1LwJ41GQZ-MNibbHOq2NQF6s1YJSfwVYZjwsA5hULPEPGS075NZXavrr_RuTKrKlLuh2LG2QzEm6s_-SL"/>
-          <span class="absolute bottom-4 right-4 bg-primary text-white text-xs font-bold py-1 px-3 rounded-full">8 - 13 Tuổi</span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <h3 class="font-bold text-lg mb-2 uppercase">MICROBIT</h3>
-          <p class="text-sm text-onSurfaceVariant mb-4 flex-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.</p>
-          <div class="flex items-center gap-2 text-xs font-medium">
-            <span class="">IoT</span>
-            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-            <span class="">Hardware</span>
+      {data.courses.map((course: any, index: number) => (
+        <div class={`bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col ${index === 1 ? 'shadow-md border-2 border-primary transform md:-translate-y-2 transition-transform' : ''}`}>
+          <div class="h-48 relative">
+            <img alt={course.title[lang]} class="w-full h-full object-cover" src={course.image?.secure_url}/>
+            <span class="absolute bottom-4 right-4 bg-primary text-white text-xs font-bold py-1 px-3 rounded-full">{course.ageRange[lang]}</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-bold text-lg mb-2 uppercase">{course.title[lang]}</h3>
+            <p class="text-sm text-onSurfaceVariant mb-4 flex-1">{course.description[lang]}</p>
+            <div class="flex items-center gap-2 text-xs font-medium">
+              {course.tags.map((tag: any, i: number) => (
+                <>
+                  <span class="">{tag[lang]}</span>
+                  {i < course.tags.length - 1 && <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>}
+                </>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Course Card 2 (Highlighted) -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md border-2 border-primary flex flex-col transform md:-translate-y-2 transition-transform">
-        <div class="h-48 relative">
-          <img alt="Scratch Course" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvQNO0Xad-D0zY-o0wYGjH4ahlVm0CydANxXKXYFoOIRbTbdJh94k6BRsi-exTfIO_Xbo4YgJDtWm1YpSa3XdDBbrmDaHIlco9fpk3jRwYkoh1nPUZ754gHoCFv4ccTje9h4xWXBHRwh4KeEaJWKy0EPzxW8kBmwh0yNDeB_Yui1fkFAae62843PHsEzFj8bEz8uvH8Bjc3UGqPt3kafGL-GMKfVP13UL43NVNrIKwPb1wvBRMHGf21ejH-wq86hq8l0M21pIzIWPb"/>
-          <span class="absolute bottom-4 right-4 bg-primary text-white text-xs font-bold py-1 px-3 rounded-full">7 - 13 Tuổi</span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <h3 class="font-bold text-lg mb-2 uppercase">SCRATCH</h3>
-          <p class="text-sm text-onSurfaceVariant mb-4 flex-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.</p>
-          <div class="flex items-center gap-2 text-xs font-medium">
-            <span class="">IoT</span>
-            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-            <span class="">Hardware</span>
-          </div>
-        </div>
-      </div>
-      <!-- Course Card 3 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
-        <div class="h-48 relative">
-          <img alt="Minecraft Education" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc4BNjJc7fqQQdSHgLpNbkypfnroe6CwGOH2kzlZjwgyiXfjZAc7Q0YfKFQ7rMswFtiynQ1petrvRRYXGM75-cHnpFBCJ3Vz66zAdeB5QYs-wDjl4Enf85rB6DoW-kT5JmIQzESWKgVlH-Tkit9I9CAJ4qlQNd0CJ51LpOKTEtszc3mB5eItHTqA4NtVrf_wR8zQA4EUabRxyYRPogYVrs7XSCW9DwUe0DX3csmBOhgpcDpMluNXgjQ6F2CVx0QeXUCz8-e8cNVoCU"/>
-          <span class="absolute bottom-4 right-4 bg-primary text-white text-xs font-bold py-1 px-3 rounded-full">7 - 18 Tuổi</span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <h3 class="font-bold text-lg mb-2 uppercase">MINECRAFT EDUCATION</h3>
-          <p class="text-sm text-onSurfaceVariant mb-4 flex-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.</p>
-          <div class="flex items-center gap-2 text-xs font-medium">
-            <span class="">IoT</span>
-            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-            <span class="">Hardware</span>
-          </div>
-        </div>
-      </div>
-      <!-- Course Card 4 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
-        <div class="h-48 relative">
-          <img alt="Robot Edison" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFZQ5Y_GsbFqsIk_-ov7441vYs-HMPxgJDD1U9CgS7EcJv4-FupdGSQDUCi_q22CQGTk37Qz-7UeGQK66y3xZeZ23NIh_8pi-_dqkOvDDXi8hs-XPABY8UXFlgJ8pe8CIugn0fmmsHfmHxHuW4ZRU1mV6dmnqLv7FVdKrtlseJR_P3fiaEDegJGYcNZd6aVMy-LGy_rFKsEwysJ8_EE21DVHOOfiDpvYjsDxJTOh0ru1WnsvTVCUiCKI4V1_iadjpvroxPIlLt9A25"/>
-          <span class="absolute bottom-4 right-4 bg-primary text-white text-xs font-bold py-1 px-3 rounded-full">6 - 12 Tuổi</span>
-        </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <h3 class="font-bold text-lg mb-2 uppercase">ROBOT EDISON</h3>
-          <p class="text-sm text-onSurfaceVariant mb-4 flex-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.</p>
-          <div class="flex items-center gap-2 text-xs font-medium">
-            <span class="">Robot</span>
-            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-            <span class="">Logic</span>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>
