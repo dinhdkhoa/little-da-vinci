@@ -1,16 +1,16 @@
 {
   "hero": {
     "tagline": {
-      "en": "Enroll Now: Microbit K01 Live",
+      "en": "Enroll Now: Microbit K03 Live",
       "vi": "Đang Chiêu Sinh: Lớp Microbit K03 Live"
     },
     "title": {
-      "en": "Lorem ipsum dolor sit amet, <span class=\"text-primary\">CONSECTETUR</span> adipiscing elit Sed convallis lectus",
-      "vi": "Lorem ipsum dolor sit amet, <span class=\"text-primary\">CONSECTETUR</span> adipiscing elit Sed convallis lectus"
+      "en": "Empower young minds to <span class=\"text-primary\">create</span> the digital future",
+      "vi": "Khai phóng tư duy để con tự tay <span class=\"text-primary\">kiến tạo</span> tương lai số"
     },
     "description": {
-      "en": "Không cầm tay chỉ việc, không mang đến những bài học khô khan khó nhằn, chúng tôi biến công nghệ thành một \"sân chơi\" để trẻ tự do khám phá và phá vỡ mọi giới hạn tư duy thông thường.\n\nTại đây, mỗi bạn nhỏ đều được khơi gợi niềm đam mê sáng tạo để tự tay thiết kế và tạo nên những sản phẩm hữu ích cho cuộc sống thường nhật.",
-      "vi": "Không cầm tay chỉ việc, không mang đến những bài học khô khan khó nhằn, chúng tôi biến công nghệ thành một \"sân chơi\" để trẻ tự do khám phá và phá vỡ mọi giới hạn tư duy thông thường.\n\nTại đây, mỗi bạn nhỏ đều được khơi gợi niềm đam mê sáng tạo để tự tay thiết kế và tạo nên những sản phẩm hữu ích cho cuộc sống thường nhật."
+      "en": "We transform screen time into a playground for coding and logic. Kids learn by doing, inventing real technology solutions for their everyday lives.",
+      "vi": "Chúng tôi biến thời gian sử dụng thiết bị thành một \"sân chơi\" tư duy logic. Tại đây, con tự do thiết kế và lập trình các dự án công nghệ thực tế cho cuộc sống."
     },
     "cta1_label": {
       "en": "Register Now",
@@ -18,10 +18,10 @@
     },
     "cta1_link": "#register",
     "cta2_label": {
-      "en": "Learn More",
+      "en": "Explore Programs",
       "vi": "Tìm Hiểu Thêm"
     },
-    "cta2_link": "#",
+    "cta2_link": "/courses",
     "image": {
       "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDCHbbOLNFbzspouKFTQXZTgkuYAvJLJtt5PZ-rIYeEctsdC0D4UN8SBy3qacfqiICYJxr6XS12L5zsDeWCyZe41VRGbQfiQ_9-0_rfQaZEWK4MzW-Peu_yQ-nhZd9YfdaPYUMMNHFALL2R0YWrGU164hCdvCUWw2GMU7fcfer0aVBvQkH-m664aS2pRmCZBRSe3ln9PNZc2xyL6CDQlPFDyhlG-KssrdYw6V-RljoE0VRbFm05KHbvguM2Bo7CTJ57Hgvo6VDcFAxo",
       "public_id": ""
@@ -30,11 +30,11 @@
   "howWeTeach": {
     "title": {
       "en": "How We Teach",
-      "vi": "Cách Chúng Tôi Giảng Dạy"
+      "vi": "Phương Pháp Giảng Dạy"
     },
     "description": {
-      "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna.",
-      "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna."
+      "en": "We employ a hands-on, student-centered approach where children learn by building, experimenting, and showcasing their own technical creations.",
+      "vi": "Chúng tôi áp dụng phương pháp thực hành lấy học sinh làm trung tâm, nơi trẻ học thông qua việc lắp ráp, thử nghiệm và tự tay trình bày các sáng tạo công nghệ của mình."
     },
     "steps": [
       {
@@ -44,7 +44,7 @@
           "vi": "Khơi Gợi Đam Mê"
         },
         "description": {
-          "en": "Tìm kiếm sở thích và thế mạnh riêng của từng học viên thông qua các hoạt động trải nghiệm.",
+          "en": "Uncover strengths and personal interests through playful interactive activities and tech trials.",
           "vi": "Tìm kiếm sở thích và thế mạnh riêng của từng học viên thông qua các hoạt động trải nghiệm."
         }
       },
@@ -55,7 +55,7 @@
           "vi": "Xây Dựng Nền Tảng"
         },
         "description": {
-          "en": "Học các nguyên lý cơ bản về lập trình và tư duy logic một cách trực quan sinh động.",
+          "en": "Master basic computational thinking and core principles in an engaging, visual way.",
           "vi": "Học các nguyên lý cơ bản về lập trình và tư duy logic một cách trực quan sinh động."
         }
       },
@@ -66,7 +66,7 @@
           "vi": "Thực Thi Ý Tưởng"
         },
         "description": {
-          "en": "Tự tay thiết kế và lập trình các sản phẩm công nghệ thực tế từ những ý tưởng cá nhân.",
+          "en": "Bring personal ideas to life by designing and programming real, working applications.",
           "vi": "Tự tay thiết kế và lập trình các sản phẩm công nghệ thực tế từ những ý tưởng cá nhân."
         }
       },
@@ -77,7 +77,7 @@
           "vi": "Tỏa Sáng Thành Quả"
         },
         "description": {
-          "en": "Trình bày dự án cuối khóa và nhận chứng chỉ công nhận sự nỗ lực học tập của bé.",
+          "en": "Present projects, explain mechanics, and receive certification of achievement.",
           "vi": "Trình bày dự án cuối khóa và nhận chứng chỉ công nhận sự nỗ lực học tập của bé."
         }
       }
@@ -86,11 +86,11 @@
   "programs": {
     "title": {
       "en": "Our Programs",
-      "vi": "Các Khoá Học"
+      "vi": "Các Lộ Trình Học Sáng Tạo"
     },
     "quote": {
-      "en": "\"I have no special talents. I am only passionately curious\"",
-      "vi": "\"I have no special talents. I am only passionately curious\""
+      "en": "\"I have no special talents. I am only passionately curious\" — Albert Einstein",
+      "vi": "\"Tôi không có tài năng gì đặc biệt. Tôi chỉ tò mò một cách đầy nhiệt huyết\" — Albert Einstein"
     },
     "courses": [
       {
@@ -99,11 +99,14 @@
           "public_id": ""
         },
         "ageRange": { "en": "8 - 13 Years Old", "vi": "8 - 13 Tuổi" },
-        "title": { "en": "MICROBIT", "vi": "MICROBIT" },
-        "description": { "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.", "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt." },
+        "title": { "en": "MICROBIT & IoT", "vi": "MICROBIT & IoT" },
+        "description": { 
+          "en": "Program micro-computers to read sensors, control lights, and build smart devices.", 
+          "vi": "Lập trình mạch máy tính mini, đọc cảm biến, điều khiển đèn và tự tạo thiết bị thông minh." 
+        },
         "tags": [
-          { "en": "IoT", "vi": "IoT" },
-          { "en": "Hardware", "vi": "Hardware" }
+          { "en": "Hardware", "vi": "Phần Cứng" },
+          { "en": "IoT", "vi": "Vạn Vật Kết Nối" }
         ]
       },
       {
@@ -112,11 +115,14 @@
           "public_id": ""
         },
         "ageRange": { "en": "7 - 13 Years Old", "vi": "7 - 13 Tuổi" },
-        "title": { "en": "SCRATCH", "vi": "SCRATCH" },
-        "description": { "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.", "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt." },
+        "title": { "en": "SCRATCH & GAME DESIGN", "vi": "SCRATCH & GAME DESIGN" },
+        "description": { 
+          "en": "Create interactive animations and design games using block-based coding.", 
+          "vi": "Tự tay thiết kế trò chơi, vẽ nhân vật và lập trình phim hoạt hình bằng khối lệnh kéo thả sinh động." 
+        },
         "tags": [
-          { "en": "IoT", "vi": "IoT" },
-          { "en": "Hardware", "vi": "Hardware" }
+          { "en": "Block Code", "vi": "Lập Trình Kéo Thả" },
+          { "en": "Game Design", "vi": "Thiết Kế Game" }
         ]
       },
       {
@@ -126,10 +132,13 @@
         },
         "ageRange": { "en": "7 - 18 Years Old", "vi": "7 - 18 Tuổi" },
         "title": { "en": "MINECRAFT EDUCATION", "vi": "MINECRAFT EDUCATION" },
-        "description": { "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.", "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt." },
+        "description": { 
+          "en": "Build block worlds while learning logic, math, and spatial computational thinking.", 
+          "vi": "Khám phá thế giới 3D, học lập trình và tư duy logic thông qua các nhiệm vụ hấp dẫn trong Minecraft." 
+        },
         "tags": [
-          { "en": "IoT", "vi": "IoT" },
-          { "en": "Hardware", "vi": "Hardware" }
+          { "en": "3D Coding", "vi": "Lập Trình 3D" },
+          { "en": "Logic", "vi": "Tư Duy Logic" }
         ]
       },
       {
@@ -139,41 +148,53 @@
         },
         "ageRange": { "en": "6 - 12 Years Old", "vi": "6 - 12 Tuổi" },
         "title": { "en": "ROBOT EDISON", "vi": "ROBOT EDISON" },
-        "description": { "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt.", "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt." },
+        "description": { 
+          "en": "Program smart Edison robots to solve mazes, race, and detect obstacles.", 
+          "vi": "Điều khiển và lập trình Robot Edison thông minh vượt chướng ngại vật, dò đường và giải mật mã." 
+        },
         "tags": [
-          { "en": "Robot", "vi": "Robot" },
-          { "en": "Logic", "vi": "Logic" }
+          { "en": "Robotics", "vi": "Robotics" },
+          { "en": "Sensors", "vi": "Cảm Biến" }
         ]
       }
     ]
   },
   "whyChooseUs": {
     "title": {
-      "en": "Why Choose ComputerXplorers?",
-      "vi": "Tại Sao Chọn Chúng Tôi?"
+      "en": "Why Choose Little Da Vinci?",
+      "vi": "Tại Sao Chọn Little Da Vinci?"
     },
     "features": [
       {
         "icon": "verified_user",
-        "title": { "en": "Expert Tutors", "vi": "Giáo Viên Tận Tâm" },
-        "description": { "en": "Our passionate educators are industry professionals and trained specialists who know how to make complex tech simple.", "vi": "Our passionate educators are industry professionals and trained specialists who know how to make complex tech simple." }
+        "title": { "en": "Expert Mentors", "vi": "Giáo Viên Tận Tâm" },
+        "description": { 
+          "en": "Our passionate educators are industry professionals who make complex programming concepts simple and fun.", 
+          "vi": "Đội ngũ giảng viên nhiệt huyết, xuất thân từ các công ty công nghệ lớn, biết cách biến kiến thức phức tạp thành bài học dễ hiểu." 
+        }
       },
       {
         "icon": "rocket_launch",
-        "title": { "en": "Cutting-Edge Curriculum", "vi": "Giáo Trình Cập Nhật" },
-        "description": { "en": "From AI to Robotics, our curriculum is constantly evolving to match the rapid pace of real-world technology.", "vi": "From AI to Robotics, our curriculum is constantly evolving to match the rapid pace of real-world technology." }
+        "title": { "en": "STEM Curriculum", "vi": "Giáo Trình Chuẩn STEM" },
+        "description": { 
+          "en": "From Scratch to AI & IoT, our path is constantly updated to prepare kids for real-world digital environments.", 
+          "vi": "Lộ trình bài bản chuẩn quốc tế từ Lập trình kéo thả đến Trí tuệ nhân tạo & Vạn vật kết nối (IoT) thực tế." 
+        }
       },
       {
         "icon": "mood",
-        "title": { "en": "Fun & Engaging Learning", "vi": "Học Mà Chơi" },
-        "description": { "en": "Education doesn't have to be boring. We prioritize play, collaboration, and high-energy exploration.", "vi": "Education doesn't have to be boring. We prioritize play, collaboration, and high-energy exploration." }
+        "title": { "en": "Creative Play & Building", "vi": "Phương Pháp Trải Nghiệm" },
+        "description": { 
+          "en": "We prioritize discovery, active building, and high-energy projects over dry lecturing.", 
+          "vi": "Chúng tôi không lý thuyết suông. Học viên được tự do khám phá, trực tiếp thiết kế sản phẩm của riêng mình." 
+        }
       }
     ]
   },
   "gallery": {
     "title": {
       "en": "Gallery",
-      "vi": "Thư Viện Ảnh"
+      "vi": "Thư Viện Ảnh Lớp Học"
     },
     "images": [
       { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBh6sX9jbcTGnxrSmP76T2z4U9OpTFUQgjumOFvoOedqpWuqTogwmSyslkZsuaqyFHX6XXh0qFB2vDVi0_zFpCkUCQ2ufsLzW1OGhPxgAjD7xiw0L16ncpyqZJGJFe-WikJcuG_ycZWLHHW02T2kv9hZuXjT3dlyCgHHkuIjZRqb252aYCfk-7HeFbJM8I1LwJ41GQZ-MNibbHOq2NQF6s1YJSfwVYZjwsA5hULPEPGS075NZXavrr_RuTKrKlLuh2LG2QzEm6s_-SL", "public_id": "" },
@@ -187,24 +208,24 @@
     "items": [
       {
         "content": {
-          "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna.",
-          "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna."
+          "en": "My child absolutely loves the Scratch game design classes here. He is always excited to show me his new game creations!",
+          "vi": "Con nhà mình cực kỳ mê lớp học thiết kế game bằng Scratch ở đây. Lúc nào học xong cũng hí hửng khoe game tự làm cho mẹ xem!"
         },
-        "author": { "en": "John Doe", "vi": "Phụ Huynh" }
+        "author": { "en": "Mrs. Lan Anh - Parent of Duc Minh (9yo)", "vi": "Chị Lan Anh - Phụ huynh bé Đức Minh (9 tuổi)" }
       },
       {
         "content": {
-          "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna.",
-          "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna."
+          "en": "The Robot Edison class has taught my daughter focus and patience. The mentors are wonderful at explaining logic through fun play.",
+          "vi": "Lớp học Robot Edison đã giúp con gái tôi rèn luyện tính kiên nhẫn. Các thầy cô dạy rất dễ thương và khơi gợi tư duy tốt qua các trò chơi."
         },
-        "author": { "en": "Jane Doe", "vi": "Phụ Huynh" }
+        "author": { "en": "Mr. Quoc Bao - Parent of Gia Bach (8yo)", "vi": "Anh Quốc Bảo - Phụ huynh bé Gia Bách (8 tuổi)" }
       },
       {
         "content": {
-          "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna.",
-          "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt. Maecenas orci tellus, viverra eget lectus eget, posuere imperdiet urna."
+          "en": "Microbit & IoT has completely changed how my daughter sees smart devices in our house. She now understands sensors and coding!",
+          "vi": "Khóa học Microbit & IoT mở rộng thế giới quan của con về công nghệ xung quanh. Giờ con đã hiểu cách cảm biến nhiệt độ và đèn thông minh hoạt động."
         },
-        "author": { "en": "Smith", "vi": "Phụ Huynh" }
+        "author": { "en": "Mrs. Thu Trang - Parent of Tue Lam (11yo)", "vi": "Chị Thu Trang - Phụ huynh bé Tuệ Lâm (11 tuổi)" }
       }
     ]
   },
@@ -218,8 +239,8 @@
       "vi": "Đăng ký để nhận tư vấn khóa học lập trình cho Trẻ Em miễn phí. Little Da Vinci sẽ liên hệ bạn trong thời gian sớm nhất."
     },
     "address": {
-      "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "vi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis lectus vitae condimentum tincidunt."
+      "en": "123 Nguyen Dinh Chieu, Ward 1, District 3, Ho Chi Minh City",
+      "vi": "123 Nguyễn Đình Chiểu, Phường 1, Quận 3, TP. Hồ Chí Minh"
     },
     "email": {
       "en": "info@littledavinci.com",

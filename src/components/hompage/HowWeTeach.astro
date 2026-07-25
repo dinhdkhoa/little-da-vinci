@@ -5,23 +5,26 @@ const { data, lang } = Astro.props;
 <section class="py-20 bg-white relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
     <div class="text-right mb-16 max-w-2xl ml-auto">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">{data.title[lang]}</h2>
-      <p class="text-onSurfaceVariant">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-onSurface">{data.title[lang]}</h2>
+      <p class="text-onSurfaceVariant text-base leading-relaxed">
         {data.description[lang]}
       </p>
     </div>
+    
     <!-- Node Diagram Representation -->
     <div class="relative w-full py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-        <div class="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-gray-100 z-0"></div>
+        <!-- Connecting Line between steps -->
+        <div class="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary via-indigo-400 to-secondary z-0 opacity-40"></div>
+        
         {data.steps.map((step: any, index: number) => (
           <div class="relative flex flex-col items-center text-center group z-10">
-            <div class={`w-20 h-20 rounded-full flex items-center justify-center text-white mb-6 shadow-lg border-4 border-white transform transition-transform group-hover:scale-110 ${index % 2 === 0 ? 'bg-primary' : 'bg-secondary'}`}>
-              <span class="material-symbols-outlined text-3xl">{step.icon}</span>
-              <div class={`absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${index % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}>{index + 1}</div>
+            <div class={`w-20 h-20 rounded-full flex items-center justify-center text-white mb-6 shadow-md border-4 border-white relative transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:rotate-6 ${index % 2 === 0 ? 'bg-primary shadow-primary/20' : 'bg-secondary shadow-secondary/20'}`}>
+              <span class="material-symbols-outlined text-3.5xl">{step.icon}</span>
+              <div class={`absolute -top-1.5 -right-1.5 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-sm border-2 border-white ${index % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}>{index + 1}</div>
             </div>
-            <h3 class="font-bold text-lg mb-2">{step.title[lang]}</h3>
-            <p class="text-sm text-onSurfaceVariant">{step.description[lang]}</p>
+            <h3 class="font-bold text-lg text-onSurface mb-2 group-hover:text-primary transition-colors duration-300">{step.title[lang]}</h3>
+            <p class="text-sm text-onSurfaceVariant leading-relaxed px-4">{step.description[lang]}</p>
           </div>
         ))}
       </div>

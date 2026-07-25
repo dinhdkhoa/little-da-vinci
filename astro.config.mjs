@@ -19,11 +19,6 @@ export default defineConfig({
     image: {
         service: passthroughImageService()
     },
-    fonts: [{
-        name: "Phudu",
-        provider: fontProviders.google(),
-        cssVariable: "--font-phudu",
-    }],
     i18n: {
         locales: ["en", "vi"],
         defaultLocale: "vi",

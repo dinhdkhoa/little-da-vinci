@@ -1,5 +1,36 @@
 ---
 const { data, lang } = Astro.props;
+
+const labels = {
+  vi: {
+    fullName: "Họ Tên Phụ Huynh",
+    fullNamePlaceholder: "Nguyễn Văn A",
+    phone: "Số Điện Thoại",
+    phonePlaceholder: "(+84) 000-000-000",
+    target: "Tên & Tuổi Của Bé",
+    targetPlaceholder: "Ví dụ: Nguyễn Minh Đức - 8 tuổi",
+    interest: "Khóa Học Quan Tâm",
+    interestPlaceholder: "Ví dụ: Lập trình Scratch",
+    message: "Lời Nhắn",
+    messagePlaceholder: "Hãy chia sẻ mong muốn hoặc thắc mắc của bạn với chúng tôi...",
+    submit: "Đăng Ký Ngay"
+  },
+  en: {
+    fullName: "Parent's Full Name",
+    fullNamePlaceholder: "John Doe",
+    phone: "Phone Number",
+    phonePlaceholder: "(+84) 000-000-000",
+    target: "Child's Name & Age",
+    targetPlaceholder: "Example: John Jr. - 8 years old",
+    interest: "Course of Interest",
+    interestPlaceholder: "Example: Scratch coding",
+    message: "Message",
+    messagePlaceholder: "Please share what you'd like your child to achieve...",
+    submit: "Register Now"
+  }
+};
+
+const lf = labels[lang as 'vi' | 'en'] || labels.vi;
 ---
 
 <section class="py-20 bg-surface" id="register">
@@ -7,62 +38,61 @@ const { data, lang } = Astro.props;
     <!-- Contact Info -->
     <div class="flex-1 space-y-8">
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">{data.title[lang]}</h2>
-        <p class="text-onSurfaceVariant">{data.description[lang]}</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-onSurface">{data.title[lang]}</h2>
+        <p class="text-onSurfaceVariant leading-relaxed">{data.description[lang]}</p>
       </div>
       <ul class="space-y-6 text-sm text-onSurfaceVariant">
         <li class="flex items-start gap-4">
-          <svg class="h-6 w-6 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-            <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-          </svg>
-          <span class="">{data.address[lang]}</span>
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-lg">location_on</span>
+          </div>
+          <span class="mt-2.5 leading-relaxed">{data.address[lang]}</span>
         </li>
         <li class="flex items-start gap-4">
-          <svg class="h-6 w-6 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-          </svg>
-          <span class="">{data.email[lang]}</span>
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-lg">mail</span>
+          </div>
+          <a href={`mailto:${data.email[lang]}`} class="mt-2.5 hover:text-primary transition-colors">{data.email[lang]}</a>
         </li>
         <li class="flex items-start gap-4">
-          <svg class="h-6 w-6 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-          </svg>
-          <span class="">{data.phone[lang]}</span>
+          <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-lg">call</span>
+          </div>
+          <a href={`tel:${data.phone[lang]}`} class="mt-2.5 hover:text-primary transition-colors">{data.phone[lang]}</a>
         </li>
       </ul>
     </div>
+    
     <!-- Form Card -->
     <div class="flex-1">
-      <div class="bg-white p-8 rounded-xl border-2 border-primary shadow-sm relative">
-        <form action="#" class="space-y-4" method="POST">
-          <div class="grid grid-cols-2 gap-4">
+      <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm relative hover:shadow-md transition-shadow">
+        <form action="#" class="space-y-5" method="POST">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-medium text-gray-700 mb-1" for="name">Họ Tên</label>
-              <input class="w-full border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 text-sm py-2 px-3" id="name" name="name" type="text"/>
+              <label class="block text-xs font-bold text-onSurface mb-2 uppercase tracking-wider" for="name">{lf.fullName}</label>
+              <input class="w-full border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-primary text-sm py-3 px-4 outline-none transition-all" id="name" name="name" placeholder={lf.fullNamePlaceholder} type="text" required/>
             </div>
             <div>
-              <label class="block text-xs font-medium text-gray-700 mb-1" for="phone">Số Điện Thoại</label>
-              <input class="w-full border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 text-sm py-2 px-3 placeholder-gray-400" id="phone" name="phone" placeholder="(+84) 000-000-0000" type="tel"/>
+              <label class="block text-xs font-bold text-onSurface mb-2 uppercase tracking-wider" for="phone">{lf.phone}</label>
+              <input class="w-full border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-primary text-sm py-3 px-4 outline-none transition-all" id="phone" name="phone" placeholder={lf.phonePlaceholder} type="tel" required/>
             </div>
           </div>
           <div>
-            <label class="block text-xs font-medium text-gray-700 mb-1" for="target">Đối Tượng Đăng Ký</label>
-            <input class="w-full border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 text-sm py-2 px-3 placeholder-gray-400" id="target" name="target" placeholder="eg: Con" type="text"/>
+            <label class="block text-xs font-bold text-onSurface mb-2 uppercase tracking-wider" for="target">{lf.target}</label>
+            <input class="w-full border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-primary text-sm py-3 px-4 outline-none transition-all" id="target" name="target" placeholder={lf.targetPlaceholder} type="text" required/>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-medium text-gray-700 mb-1" for="interest">Interest</label>
-              <input class="w-full border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 text-sm py-2 px-3 placeholder-gray-400" id="interest" name="interest" placeholder="eg: Robotic" type="text"/>
-            </div>
-            <div class="md:col-span-2">
-              <label class="block text-xs font-medium text-gray-700 mb-1" for="message">Message</label>
-              <textarea class="w-full border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 text-sm py-2 px-3 placeholder-gray-400" id="message" name="message" placeholder="Hãy chia sẻ với chúng tôi một chút vì sao bạn lại tìm tới Little Da Vinci..." rows="4"></textarea>
-            </div>
+          <div>
+            <label class="block text-xs font-bold text-onSurface mb-2 uppercase tracking-wider" for="interest">{lf.interest}</label>
+            <input class="w-full border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-primary text-sm py-3 px-4 outline-none transition-all" id="interest" name="interest" placeholder={lf.interestPlaceholder} type="text"/>
           </div>
-          <div class="pt-2 text-right">
-            <button class="w-full md:w-auto bg-secondary hover:bg-blue-700 text-white font-semibold py-2.5 px-8 rounded-md transition-colors text-sm" type="submit">
-              Đăng Ký
+          <div>
+            <label class="block text-xs font-bold text-onSurface mb-2 uppercase tracking-wider" for="message">{lf.message}</label>
+            <textarea class="w-full border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-primary text-sm py-3 px-4 outline-none transition-all resize-none" id="message" name="message" placeholder={lf.messagePlaceholder} rows="4"></textarea>
+          </div>
+          <div class="pt-2">
+            <button class="w-full bg-secondary hover:bg-indigo-700 text-white font-bold py-3.5 px-8 rounded-full transition-all duration-300 shadow-sm hover:shadow-lg flex items-center justify-center gap-2 text-sm md:text-base cursor-pointer" type="submit">
+              <span class="material-symbols-outlined text-lg">send</span>
+              {lf.submit}
             </button>
           </div>
         </form>

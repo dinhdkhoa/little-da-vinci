@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/hompage/Hero.astro';
 import HowWeTeach from '../components/hompage/HowWeTeach.astro';
+import WhyChooseUs from '../components/hompage/WhyChooseUs.astro';
 import Programs from '../components/hompage/Programs.astro';
 import Gallery from '../components/hompage/Gallery.astro';
 import Testimonials from '../components/hompage/Testimonials.astro';
@@ -15,6 +16,7 @@ const lang = Astro.currentLocale ?? "vi";
 <Layout title="Little Da Vinci - Tech Academy">
     <Hero data={homeData.hero} lang={lang} />
     <HowWeTeach data={homeData.howWeTeach} lang={lang} />
+    <WhyChooseUs data={homeData.whyChooseUs} lang={lang} />
     <Programs data={homeData.programs} lang={lang} />
     <Gallery data={homeData.gallery} lang={lang} />
     <Testimonials data={homeData.testimonials} lang={lang} />
