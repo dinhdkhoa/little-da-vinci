@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "title": { "en": "Our Programs", "vi": "Khóa Học" },
+    "subtitle": { "en": "Hands-on technology courses designed to spark curiosity in every young creator.", "vi": "Các khóa học công nghệ thực hành, khơi dậy đam mê sáng tạo trong mỗi bạn nhỏ." }
+  },
+  "courses": [
+    {
+      "slug": "microbit",
+      "title": { "en": "Microbit & IoT", "vi": "Microbit & IoT" },
+      "ageRange": { "en": "8–13 yrs", "vi": "8–13 tuổi" },
+      "color": "primary",
+      "icon": "developer_board",
+      "tags": [{ "en": "Hardware", "vi": "Phần Cứng" }, { "en": "IoT", "vi": "IoT" }],
+      "description": { "en": "Program real micro-computers to read sensors, control lights, and build mini smart home systems.", "vi": "Lập trình máy tính thu nhỏ, đọc cảm biến, điều khiển đèn và tạo hệ thống nhà thông minh mini." },
+      "image": { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBh6sX9jbcTGnxrSmP76T2z4U9OpTFUQgjumOFvoOedqpWuqTogwmSyslkZsuaqyFHX6XXh0qFB2vDVi0_zFpCkUCQ2ufsLzW1OGhPxgAjD7xiw0L16ncpyqZJGJFe-WikJcuG_ycZWLHHW02T2kv9hZuXjT3dlyCgHHkuIjZRqb252aYCfk-7HeFbJM8I1LwJ41GQZ-MNibbHOq2NQF6s1YJSfwVYZjwsA5hULPEPGS075NZXavrr_RuTKrKlLuh2LG2QzEm6s_-SL" }
+    },
+    {
+      "slug": "scratch",
+      "title": { "en": "Scratch & Game Design", "vi": "Scratch & Thiết Kế Game" },
+      "ageRange": { "en": "7–13 yrs", "vi": "7–13 tuổi" },
+      "color": "secondary",
+      "icon": "sports_esports",
+      "tags": [{ "en": "Block Code", "vi": "Kéo Thả" }, { "en": "Game", "vi": "Trò Chơi" }],
+      "description": { "en": "Design and animate interactive games using Scratch — the world's most popular visual coding platform.", "vi": "Thiết kế và tạo hoạt ảnh trò chơi tương tác bằng Scratch – nền tảng lập trình trực quan phổ biến nhất thế giới." },
+      "image": { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDvQNO0Xad-D0zY-o0wYGjH4ahlVm0CydANxXKXYFoOIRbTbdJh94k6BRsi-exTfIO_Xbo4YgJDtWm1YpSa3XdDBbrmDaHIlco9fpk3jRwYkoh1nPUZ754gHoCFv4ccTje9h4xWXBHRwh4KeEaJWKy0EPzxW8kBmwh0yNDeB_Yui1fkFAae62843PHsEzFj8bEz8uvH8Bjc3UGqPt3kafGL-GMKfVP13UL43NVNrIKwPb1wvBRMHGf21ejH-wq86hq8l0M21pIzIWPb" }
+    },
+    {
+      "slug": "minecraft",
+      "title": { "en": "Minecraft Education", "vi": "Minecraft Education" },
+      "ageRange": { "en": "7–18 yrs", "vi": "7–18 tuổi" },
+      "color": "primary",
+      "icon": "view_in_ar",
+      "tags": [{ "en": "3D World", "vi": "Thế Giới 3D" }, { "en": "Logic", "vi": "Logic" }],
+      "description": { "en": "Build entire 3D worlds and learn geometry, engineering and computational thinking inside Minecraft.", "vi": "Xây dựng thế giới 3D và học hình học, kỹ thuật, tư duy máy tính bên trong Minecraft." },
+      "image": { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCc4BNjJc7fqQQdSHgLpNbkypfnroe6CwGOH2kzlZjwgyiXfjZAc7Q0YfKFQ7rMswFtiynQ1petrvRRYXGM75-cHnpFBCJ3Vz66zAdeB5QYs-wDjl4Enf85rB6DoW-kT5JmIQzESWKgVlH-Tkit9I9CAJ4qlQNd0CJ51LpOKTEtszc3mB5eItHTqA4NtVrf_wR8zQA4EUabRxyYRPogYVrs7XSCW9DwUe0DX3csmBOhgpcDpMluNXgjQ6F2CVx0QeXUCz8-e8cNVoCU" }
+    },
+    {
+      "slug": "robot-edison",
+      "title": { "en": "Robot Edison", "vi": "Robot Edison" },
+      "ageRange": { "en": "6–12 yrs", "vi": "6–12 tuổi" },
+      "color": "secondary",
+      "icon": "smart_toy",
+      "tags": [{ "en": "Robotics", "vi": "Robot" }, { "en": "Sensors", "vi": "Cảm Biến" }],
+      "description": { "en": "Control Edison robots with barcodes and Python-like code. Build mazes, races, and autonomous challenges.", "vi": "Điều khiển robot Edison bằng mã vạch và mã Python đơn giản. Xây mê cung, đua xe và thử thách tự động." },
+      "image": { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBFZQ5Y_GsbFqsIk_-ov7441vYs-HMPxgJDD1U9CgS7EcJv4-FupdGSQDUCi_q22CQGTk37Qz-7UeGQK66y3xZeZ23NIh_8pi-_dqkOvDDXi8hs-XPABY8UXFlgJ8pe8CIugn0fmmsHfmHxHuW4ZRU1mV6dmnqLv7FVdKrtlseJR_P3fiaEDegJGYcNZd6aVMy-LGy_rFKsEwysJ8_EE21DVHOOfiDpvYjsDxJTOh0ru1WnsvTVCUiCKI4V1_iadjpvroxPIlLt9A25" }
+    },
+    {
+      "slug": "coding-ai",
+      "title": { "en": "Coding & AI", "vi": "Lập Trình & AI" },
+      "ageRange": { "en": "10–16 yrs", "vi": "10–16 tuổi" },
+      "color": "primary",
+      "icon": "psychology",
+      "tags": [{ "en": "Python", "vi": "Python" }, { "en": "AI", "vi": "AI" }],
+      "description": { "en": "Learn Python and explore AI concepts like image recognition, chatbots and neural network basics.", "vi": "Học Python và khám phá AI: nhận diện hình ảnh, chatbot, và cơ bản mạng nơ-ron." },
+      "image": { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBh6sX9jbcTGnxrSmP76T2z4U9OpTFUQgjumOFvoOedqpWuqTogwmSyslkZsuaqyFHX6XXh0qFB2vDVi0_zFpCkUCQ2ufsLzW1OGhPxgAjD7xiw0L16ncpyqZJGJFe-WikJcuG_ycZWLHHW02T2kv9hZuXjT3dlyCgHHkuIjZRqb252aYCfk-7HeFbJM8I1LwJ41GQZ-MNibbHOq2NQF6s1YJSfwVYZjwsA5hULPEPGS075NZXavrr_RuTKrKlLuh2LG2QzEm6s_-SL" }
+    },
+    {
+      "slug": "3d-printing",
+      "title": { "en": "3D Printing & Design", "vi": "In 3D & Thiết Kế" },
+      "ageRange": { "en": "8–16 yrs", "vi": "8–16 tuổi" },
+      "color": "secondary",
+      "icon": "precision_manufacturing",
+      "tags": [{ "en": "CAD", "vi": "CAD" }, { "en": "Design", "vi": "Thiết Kế" }],
+      "description": { "en": "Sketch digital models with Tinkercad then bring them to life on a real 3D printer — from idea to object.", "vi": "Phác thảo mô hình 3D với Tinkercad rồi in ra sản phẩm thực — từ ý tưởng đến vật thể." },
+      "image": { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDvQNO0Xad-D0zY-o0wYGjH4ahlVm0CydANxXKXYFoOIRbTbdJh94k6BRsi-exTfIO_Xbo4YgJDtWm1YpSa3XdDBbrmDaHIlco9fpk3jRwYkoh1nPUZ754gHoCFv4ccTje9h4xWXBHRwh4KeEaJWKy0EPzxW8kBmwh0yNDeB_Yui1fkFAae62843PHsEzFj8bEz8uvH8Bjc3UGqPt3kafGL-GMKfVP13UL43NVNrIKwPb1wvBRMHGf21ejH-wq86hq8l0M21pIzIWPb" }
+    }
+  ]
+}

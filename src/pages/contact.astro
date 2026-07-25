@@ -1,0 +1,247 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getLangFromUrl } from '../i18n/utils';
+import contactData from '../content/contact.json';
+
+const lang = getLangFromUrl(Astro.url) as 'vi' | 'en';
+const hero = contactData.hero;
+const info = contactData.info;
+const faqs = contactData.faqs;
+---
+
+<Layout title={`${hero.title[lang]} | Little Da Vinci`}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-amber-400 via-orange-400 to-rose-500 text-white py-24 md:py-32">
+    <div class="absolute inset-0 opacity-15">
+      <div class="absolute top-10 left-20 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-yellow-200 rounded-full blur-3xl animate-pulse"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10 text-center">
+      <span class="inline-block bg-white/15 backdrop-blur-sm font-bold text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-6 border border-white/20">
+        <span class="material-symbols-outlined text-sm align-middle mr-1">waving_hand</span>
+        {lang === 'vi' ? 'Xin Chào!' : 'Say Hello!'}
+      </span>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4">{hero.title[lang]}</h1>
+      <p class="text-lg md:text-xl text-orange-50 max-w-2xl mx-auto leading-relaxed">{hero.subtitle[lang]}</p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Contact Cards + Form -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+        <!-- Contact Info Column -->
+        <div class="lg:col-span-2 space-y-6">
+          <!-- Info Cards -->
+          <div class="bg-surface rounded-2xl p-6 border border-gray-100 hover:border-primary/30 transition-all duration-300 hover:shadow-lg group">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <span class="material-symbols-outlined text-xl">location_on</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-onSurface text-sm mb-1">{lang === 'vi' ? 'Địa Chỉ' : 'Address'}</h3>
+                <p class="text-sm text-onSurfaceVariant leading-relaxed">{info.address[lang]}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl p-6 border border-gray-100 hover:border-secondary/30 transition-all duration-300 hover:shadow-lg group">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center flex-shrink-0 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                <span class="material-symbols-outlined text-xl">mail</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-onSurface text-sm mb-1">Email</h3>
+                <a href={`mailto:${info.email[lang]}`} class="text-sm text-secondary hover:underline">{info.email[lang]}</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl p-6 border border-gray-100 hover:border-amber-300/50 transition-all duration-300 hover:shadow-lg group">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                <span class="material-symbols-outlined text-xl">call</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-onSurface text-sm mb-1">{lang === 'vi' ? 'Điện Thoại' : 'Phone'}</h3>
+                <a href={`tel:${info.phone[lang]}`} class="text-sm text-amber-600 hover:underline">{info.phone[lang]}</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl p-6 border border-gray-100 hover:border-primary/30 transition-all duration-300 hover:shadow-lg group">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-500 flex items-center justify-center flex-shrink-0 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
+                <span class="material-symbols-outlined text-xl">schedule</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-onSurface text-sm mb-1">{lang === 'vi' ? 'Giờ Mở Cửa' : 'Opening Hours'}</h3>
+                <p class="text-sm text-onSurfaceVariant">{info.hours[lang]}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Column -->
+        <div class="lg:col-span-3">
+          <div class="bg-surface rounded-3xl p-8 md:p-10 border border-gray-100">
+            <h2 class="text-2xl font-black text-onSurface mb-2">
+              {lang === 'vi' ? 'Gửi Tin Nhắn Cho Chúng Tôi' : 'Send Us a Message'}
+            </h2>
+            <p class="text-sm text-onSurfaceVariant mb-8">
+              {lang === 'vi'
+                ? 'Điền thông tin bên dưới — đội ngũ của chúng tôi sẽ phản hồi trong vòng 24 giờ.'
+                : 'Fill out the form below — our team will get back to you within 24 hours.'}
+            </p>
+            <form class="space-y-5" action="#" method="POST">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label for="name" class="block text-xs font-bold text-onSurface mb-2 uppercase tracking-wider">{lang === 'vi' ? 'Họ Tên' : 'Full Name'}</label>
+                  <input type="text" id="name" name="name" required
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                    placeholder={lang === 'vi' ? 'Nguyễn Văn A' : 'John Doe'}
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-xs font-bold text-onSurface mb-2 uppercase tracking-wider">Email</label>
+                  <input type="email" id="email" name="email" required
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                    placeholder="parent@email.com"
+                  />
+                </div>
+              </div>
+              <div>
+                <label for="phone" class="block text-xs font-bold text-onSurface mb-2 uppercase tracking-wider">{lang === 'vi' ? 'Số Điện Thoại' : 'Phone Number'}</label>
+                <input type="tel" id="phone" name="phone"
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                  placeholder="(+84) 000-000-000"
+                />
+              </div>
+              <div>
+                <label for="subject" class="block text-xs font-bold text-onSurface mb-2 uppercase tracking-wider">{lang === 'vi' ? 'Chủ Đề' : 'Subject'}</label>
+                <select id="subject" name="subject"
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-onSurfaceVariant">
+                  <option value="">{lang === 'vi' ? '— Chọn chủ đề —' : '— Select subject —'}</option>
+                  <option value="enrolment">{lang === 'vi' ? 'Đăng ký khóa học' : 'Course Enrolment'}</option>
+                  <option value="trial">{lang === 'vi' ? 'Đặt lịch học thử' : 'Book a Trial'}</option>
+                  <option value="event">{lang === 'vi' ? 'Sự kiện / Workshop' : 'Events / Workshops'}</option>
+                  <option value="partnership">{lang === 'vi' ? 'Hợp tác trường học' : 'School Partnership'}</option>
+                  <option value="other">{lang === 'vi' ? 'Khác' : 'Other'}</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-xs font-bold text-onSurface mb-2 uppercase tracking-wider">{lang === 'vi' ? 'Nội Dung' : 'Message'}</label>
+                <textarea id="message" name="message" rows={4} required
+                  class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none"
+                  placeholder={lang === 'vi' ? 'Viết tin nhắn của bạn...' : 'Write your message here...'}></textarea>
+              </div>
+              <button type="submit"
+                class="w-full bg-primary hover:bg-green-500 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-sm hover:shadow-md text-sm flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-lg">send</span>
+                {lang === 'vi' ? 'Gửi Tin Nhắn' : 'Send Message'}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 md:py-24 bg-surface">
+    <div class="max-w-3xl mx-auto px-6 md:px-12">
+      <div class="text-center mb-12">
+        <span class="inline-block bg-amber-100 text-amber-600 font-bold text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">FAQ</span>
+        <h2 class="text-3xl md:text-4xl font-black text-onSurface mb-4">
+          {lang === 'vi' ? 'Câu Hỏi Thường Gặp' : 'Frequently Asked Questions'}
+        </h2>
+      </div>
+
+      <div class="space-y-4" id="faq-container">
+        {faqs.map((faq, i) => (
+          <div class="group bg-white rounded-2xl border border-gray-100 overflow-hidden transition-all duration-300 hover:border-primary/20 hover:shadow-md" data-faq={i}>
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer focus:outline-none"
+              data-faq-index={i}
+              aria-expanded="false"
+            >
+              <span class="font-bold text-onSurface text-base pr-4">{faq.question[lang]}</span>
+              <span class="material-symbols-outlined text-primary text-xl flex-shrink-0 transition-transform duration-300 faq-icon">add</span>
+            </button>
+            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+              <div class="px-6 pb-6 text-sm text-onSurfaceVariant leading-relaxed">
+                {faq.answer[lang]}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Map / Visual CTA -->
+  <section class="py-16 bg-gradient-to-r from-amber-50 via-orange-50 to-rose-50">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="material-symbols-outlined text-5xl text-primary mb-4">explore</span>
+      <h2 class="text-3xl md:text-4xl font-black text-onSurface mb-4">
+        {lang === 'vi' ? 'Ghé Thăm Trung Tâm' : 'Visit Our Space'}
+      </h2>
+      <p class="text-onSurfaceVariant text-lg mb-8 max-w-2xl mx-auto">
+        {lang === 'vi'
+          ? 'Chúng tôi mời bạn đến tham quan phòng lab, gặp giáo viên và trải nghiệm không gian sáng tạo dành cho trẻ.'
+          : 'Come see our labs, meet the instructors, and experience the creative space built for young minds.'}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={`https://maps.google.com/?q=${encodeURIComponent(info.address.en)}`} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-secondary hover:bg-indigo-700 text-white font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl text-sm">
+          <span class="material-symbols-outlined">map</span>
+          {lang === 'vi' ? 'Mở Google Maps' : 'Open in Google Maps'}
+        </a>
+        <a href={`tel:${info.phone[lang]}`} class="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-onSurface font-bold px-8 py-4 rounded-full transition-all shadow-md hover:shadow-lg text-sm border border-gray-200">
+          <span class="material-symbols-outlined text-primary">call</span>
+          {info.phone[lang]}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.closest('[data-faq]') as HTMLElement;
+      const answer = faqItem.querySelector('.faq-answer') as HTMLElement;
+      const icon = button.querySelector('.faq-icon') as HTMLElement;
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      // Close all others
+      document.querySelectorAll('[data-faq]').forEach(item => {
+        const otherAnswer = item.querySelector('.faq-answer') as HTMLElement;
+        const otherIcon = item.querySelector('.faq-icon') as HTMLElement;
+        const otherBtn = item.querySelector('.faq-toggle') as HTMLElement;
+        if (item !== faqItem) {
+          otherAnswer.style.maxHeight = '0';
+          otherIcon.textContent = 'add';
+          otherIcon.classList.remove('rotate-45');
+          otherBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      if (isOpen) {
+        answer.style.maxHeight = '0';
+        icon.textContent = 'add';
+        icon.classList.remove('rotate-45');
+        button.setAttribute('aria-expanded', 'false');
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.textContent = 'close';
+        icon.classList.add('rotate-45');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

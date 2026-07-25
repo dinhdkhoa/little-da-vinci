@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "title": { "en": "Events & Workshops", "vi": "Sự Kiện & Hội Thảo" },
+    "subtitle": { "en": "From weekend camps to holiday bootcamps — hands-on tech experiences for every schedule.", "vi": "Từ trại cuối tuần đến trại hè chuyên sâu — trải nghiệm công nghệ thực hành cho mọi lịch trình." }
+  },
+  "upcoming": [
+    {
+      "id": "microbit-k03",
+      "title": { "en": "Microbit K03 — Open Enrolment", "vi": "Microbit K03 — Đang Chiêu Sinh" },
+      "date": "2026-07-05",
+      "endDate": "2026-08-30",
+      "type": { "en": "After-School Club", "vi": "Câu Lạc Bộ Sau Giờ Học" },
+      "location": { "en": "Little Da Vinci — District 3", "vi": "Little Da Vinci — Quận 3" },
+      "spots": 8,
+      "tag": "live",
+      "description": { "en": "Weekly Saturday sessions diving into IoT and physical computing with BBC Micro:bit boards.", "vi": "Buổi học Thứ Bảy hàng tuần khám phá IoT và điện toán vật lý với bo mạch BBC Micro:bit." },
+      "image": { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBh6sX9jbcTGnxrSmP76T2z4U9OpTFUQgjumOFvoOedqpWuqTogwmSyslkZsuaqyFHX6XXh0qFB2vDVi0_zFpCkUCQ2ufsLzW1OGhPxgAjD7xiw0L16ncpyqZJGJFe-WikJcuG_ycZWLHHW02T2kv9hZuXjT3dlyCgHHkuIjZRqb252aYCfk-7HeFbJM8I1LwJ41GQZ-MNibbHOq2NQF6s1YJSfwVYZjwsA5hULPEPGS075NZXavrr_RuTKrKlLuh2LG2QzEm6s_-SL" }
+    },
+    {
+      "id": "summer-ai",
+      "title": { "en": "Summer AI Bootcamp 2026", "vi": "Trại Hè AI 2026" },
+      "date": "2026-07-14",
+      "endDate": "2026-07-18",
+      "type": { "en": "Holiday Workshop", "vi": "Trại Hè Chuyên Sâu" },
+      "location": { "en": "Little Da Vinci — District 7", "vi": "Little Da Vinci — Quận 7" },
+      "spots": 15,
+      "tag": "new",
+      "description": { "en": "5 days of immersive Python, machine learning and AI project-building for teens aged 12–16.", "vi": "5 ngày Python chuyên sâu, machine learning và xây dựng dự án AI dành cho lứa tuổi 12–16." },
+      "image": { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDvQNO0Xad-D0zY-o0wYGjH4ahlVm0CydANxXKXYFoOIRbTbdJh94k6BRsi-exTfIO_Xbo4YgJDtWm1YpSa3XdDBbrmDaHIlco9fpk3jRwYkoh1nPUZ754gHoCFv4ccTje9h4xWXBHRwh4KeEaJWKy0EPzxW8kBmwh0yNDeB_Yui1fkFAae62843PHsEzFj8bEz8uvH8Bjc3UGqPt3kafGL-GMKfVP13UL43NVNrIKwPb1wvBRMHGf21ejH-wq86hq8l0M21pIzIWPb" }
+    },
+    {
+      "id": "3d-design-camp",
+      "title": { "en": "3D Design Weekend Camp", "vi": "Trại Cuối Tuần Thiết Kế 3D" },
+      "date": "2026-07-26",
+      "endDate": "2026-07-27",
+      "type": { "en": "Weekend Camp", "vi": "Trại Cuối Tuần" },
+      "location": { "en": "Little Da Vinci — District 3", "vi": "Little Da Vinci — Quận 3" },
+      "spots": 10,
+      "tag": "filling",
+      "description": { "en": "Two-day intensive Tinkercad design sprint ending with a real 3D print of each student's own creation.", "vi": "Sprint thiết kế Tinkercad 2 ngày kết thúc bằng sản phẩm in 3D thực từ tác phẩm của chính học sinh." },
+      "image": { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCc4BNjJc7fqQQdSHgLpNbkypfnroe6CwGOH2kzlZjwgyiXfjZAc7Q0YfKFQ7rMswFtiynQ1petrvRRYXGM75-cHnpFBCJ3Vz66zAdeB5QYs-wDjl4Enf85rB6DoW-kT5JmIQzESWKgVlH-Tkit9I9CAJ4qlQNd0CJ51LpOKTEtszc3mB5eItHTqA4NtVrf_wR8zQA4EUabRxyYRPogYVrs7XSCW9DwUe0DX3csmBOhgpcDpMluNXgjQ6F2CVx0QeXUCz8-e8cNVoCU" }
+    },
+    {
+      "id": "robotics-showdown",
+      "title": { "en": "Robotics Showdown — Open Day", "vi": "Ngày Hội Robot Mở" },
+      "date": "2026-08-09",
+      "endDate": "2026-08-09",
+      "type": { "en": "Open Event", "vi": "Sự Kiện Mở" },
+      "location": { "en": "Little Da Vinci — District 3", "vi": "Little Da Vinci — Quận 3" },
+      "spots": 50,
+      "tag": "free",
+      "description": { "en": "Free public showcase where students demo their semester projects to families and invited guests.", "vi": "Sự kiện mở cửa miễn phí, học sinh trình diễn dự án học kỳ trước phụ huynh và khách mời." },
+      "image": { "secure_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBFZQ5Y_GsbFqsIk_-ov7441vYs-HMPxgJDD1U9CgS7EcJv4-FupdGSQDUCi_q22CQGTk37Qz-7UeGQK66y3xZeZ23NIh_8pi-_dqkOvDDXi8hs-XPABY8UXFlgJ8pe8CIugn0fmmsHfmHxHuW4ZRU1mV6dmnqLv7FVdKrtlseJR_P3fiaEDegJGYcNZd6aVMy-LGy_rFKsEwysJ8_EE21DVHOOfiDpvYjsDxJTOh0ru1WnsvTVCUiCKI4V1_iadjpvroxPIlLt9A25" }
+    }
+  ],
+  "filters": [
+    { "key": "all", "label": { "en": "All Events", "vi": "Tất Cả" } },
+    { "key": "After-School Club", "label": { "en": "After-School", "vi": "Sau Giờ Học" } },
+    { "key": "Holiday Workshop", "label": { "en": "Holiday", "vi": "Kỳ Nghỉ" } },
+    { "key": "Weekend Camp", "label": { "en": "Weekends", "vi": "Cuối Tuần" } },
+    { "key": "Open Event", "label": { "en": "Open Days", "vi": "Ngày Hội" } }
+  ]
+}

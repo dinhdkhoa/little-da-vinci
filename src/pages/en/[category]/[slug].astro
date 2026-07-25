@@ -1,0 +1,183 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { DocumentRenderer } from '@keystatic/core/renderer';
+
+export async function getStaticPaths() {
+  const pages = import.meta.glob('../../../content/pages/*.json', { eager: true });
+  return Object.entries(pages).map(([filepath, module]: [string, any]) => {
+    const slug = filepath.split('/').pop()?.replace('.json', '');
+    const pageData = module.default || module;
+    const category = pageData.category;
+    return {
+      params: { category, slug },
+      props: { pageData }
+    };
+  });
+}
+
+const { category, slug } = Astro.params;
+const { pageData } = Astro.props;
+const lang = "en";
+
+const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1);
+---
+
+<Layout title={`${pageData.title[lang]} - Little Da Vinci`}>
+  <!-- Subpage Hero -->
+  <section class="relative bg-gradient-to-br from-secondary to-indigo-950 text-white py-16 md:py-24 px-6 overflow-hidden">
+    <!-- Abstract Design Accents -->
+    <div class="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-primary opacity-10 blur-3xl"></div>
+    <div class="absolute -bottom-12 -left-12 w-80 h-80 rounded-full bg-secondary opacity-20 blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto w-full relative z-10 flex flex-col lg:flex-row items-center gap-12">
+      <!-- Text Info -->
+      <div class="flex-1 space-y-6">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
+          <a href="/en" class="hover:underline">Home</a>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <span>{capitalizedCategory}</span>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <span class="text-white">{pageData.title[lang]}</span>
+        </nav>
+
+        <h1 class="text-4xl md:text-5xl font-black leading-tight tracking-tight">
+          {pageData.title[lang]}
+        </h1>
+        <p class="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl">
+          {pageData.subtitle[lang]}
+        </p>
+
+        <!-- Dynamic Badges -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          {pageData.ageRange?.[lang] && (
+            <span class="bg-primary/20 text-primary border border-primary/30 font-semibold px-4 py-1.5 rounded-full text-xs flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm">face</span>
+              {pageData.ageRange[lang]}
+            </span>
+          )}
+          {pageData.tags?.map((tag: any) => (
+            <span class="bg-white/10 text-white font-medium px-4 py-1.5 rounded-full text-xs">
+              # {tag[lang]}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Image Banner -->
+      {pageData.heroImage?.secure_url && (
+        <div class="flex-1 w-full lg:max-w-md relative">
+          <div class="absolute -top-3 -right-3 w-16 h-16 bg-primary rounded-xl z-0"></div>
+          <div class="absolute -bottom-3 -left-3 w-16 h-16 bg-white/10 rounded-xl z-0"></div>
+          <img 
+            alt={pageData.title[lang]} 
+            class="w-full h-[300px] object-cover relative z-10 rounded-2xl shadow-2xl border border-white/10" 
+            src={pageData.heroImage.secure_url}
+          />
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 md:py-24 bg-surface px-6">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+      <!-- Main Content Block -->
+      <div class="flex-2 bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100/50">
+        <!-- Render Rich Text Document -->
+        <div class="content-rich-text text-onSurface leading-relaxed text-base space-y-6">
+          <DocumentRenderer document={pageData[`content_${lang}`]} />
+        </div>
+      </div>
+
+      <!-- Side panel showing highlights / CTA -->
+      <div class="flex-1 flex flex-col gap-8">
+        <!-- Highlights Card -->
+        {pageData.highlights && pageData.highlights.length > 0 && (
+          <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100/50 space-y-6">
+            <h3 class="font-bold text-lg text-onSurface border-b border-gray-100 pb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary">verified</span>
+              Key Highlights
+            </h3>
+            <div class="flex flex-col gap-6">
+              {pageData.highlights.map((h: any, idx: number) => (
+                <div class="flex items-start gap-4">
+                  <div class={`w-10 h-10 rounded-full flex items-center justify-center text-white shrink-0 shadow-sm ${idx % 2 === 0 ? 'bg-primary' : 'bg-secondary'}`}>
+                    <span class="material-symbols-outlined text-lg">{h.icon}</span>
+                  </div>
+                  <div class="space-y-1">
+                    <h4 class="font-bold text-sm text-onSurface">{h.title[lang]}</h4>
+                    <p class="text-xs text-onSurfaceVariant leading-normal">{h.description[lang]}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Booking/Registration Widget -->
+        <div class="bg-secondary text-white rounded-3xl p-8 shadow-md relative overflow-hidden flex flex-col justify-between min-h-[300px]">
+          <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary opacity-10 rounded-full blur-2xl"></div>
+          <div class="space-y-4">
+            <span class="bg-primary/20 text-primary font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider inline-block">
+              Free Consultation
+            </span>
+            <h3 class="text-2xl font-black leading-snug">Register For Details</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Please leave your contact details or call us. The Little Da Vinci team will reach out to advise on the best programs for your child.
+            </p>
+          </div>
+          <div class="pt-6 space-y-4">
+            <a class="bg-primary hover:bg-green-500 text-white font-bold py-3 px-6 rounded-full text-center text-sm shadow-sm transition-colors block" href="#register">
+              Register Now
+            </a>
+            <div class="text-center text-xs text-gray-300">
+              Hotline Support: <span class="text-primary font-bold">(+84) 000-000-000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  /* Rich text styles formatting fallback */
+  .content-rich-text p {
+    font-size: 1rem;
+    color: #4b5563; /* text-onSurfaceVariant */
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+  .content-rich-text h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e1e1e; /* text-onSurface */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .content-rich-text h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e1e1e;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .content-rich-text ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+    color: #4b5563;
+  }
+  .content-rich-text li {
+    margin-bottom: 0.5rem;
+  }
+  .content-rich-text a {
+    color: #4f46e5; /* text-secondary */
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  .content-rich-text a:hover {
+    color: #4ade80; /* text-primary */
+  }
+</style>
