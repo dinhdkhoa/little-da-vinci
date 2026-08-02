@@ -51,7 +51,6 @@
     </script>
 
     <style>
-      /* Premium visual effects */
       .speech-bubble-arrow::after {
         content: "";
         position: absolute;
@@ -99,7 +98,7 @@
     </style>
   </head>
   <body
-    class="antialiased selection:bg-primary selection:text-white font-sans text-gray-800 bg-white"
+    class="antialiased selection:bg-primary selection:text-white font-sans text-gray-800 bg-[#EEF3FA]"
   >
     <!-- STICKY HEADER -->
     <header
@@ -395,18 +394,15 @@
     </div>
 
     <!-- HERO SECTION -->
-    <section id="trang-chu" class="overflow-hidden">
+      <section class="overflow-hidden">
       <img
         src="739214508_1502821791308225_4260357342534551440_n 1.png"
         alt="Trẻ học lập trình Micro:bit"
         class="hero-image"
       />
     </section>
-    <!-- INTRO / VALUES SECTION 1 -->
 
-    <section
-      class="relative bg-[#f2f7fb] py-16 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans"
-    >
+    <section class="relative bg-[#f2f7fb] py-16 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans">
       <svg
         class="absolute top-4 right-10 w-48 h-48 opacity-60 pointer-events-none"
         viewBox="0 0 281 254"
@@ -616,7 +612,7 @@
     </section>
 
     <!-- WHY CHOOSE US -->
-    <section id="tai-sao-hoc" class="py-20 bg-white px-6 md:px-12 lg:px-24">
+    <section id="tai-sao-hoc" class="py-20 bg-[#EEF3FA] px-6 md:px-12 lg:px-24">
       <div class="max-w-6xl mx-auto space-y-16">
         <!-- Section Title -->
         <div class="text-left max-w-3xl">
@@ -726,7 +722,7 @@
             >
             <span
               class="inline-block bg-primary/20 border border-primary/40 text-primary text-xs font-bold px-2 py-0.5 rounded mb-2"
-              >Buổi 1</span
+              >Buổi 1 - Khởi Động</span
             >
             <h3
               class="text-lg md:text-xl font-black font-display text-primary mb-2"
@@ -753,7 +749,7 @@
             >
             <span
               class="inline-block bg-primary/20 border border-primary/40 text-primary text-xs font-bold px-2 py-0.5 rounded mb-2"
-              >Buổi 2</span
+              >Buổi 2 - Ứng Dụng</span
             >
             <h3
               class="text-lg md:text-xl font-black font-display text-primary mb-2"
@@ -779,7 +775,7 @@
             >
             <span
               class="inline-block bg-primary/20 border border-primary/40 text-primary text-xs font-bold px-2 py-0.5 rounded mb-2"
-              >Buổi 3</span
+              >Buổi 3 - Dự Án Vui</span
             >
             <h3
               class="text-lg md:text-xl font-black font-display text-primary mb-2"
@@ -806,7 +802,7 @@
             >
             <span
               class="inline-block bg-primary/20 border border-primary/40 text-primary text-xs font-bold px-2 py-0.5 rounded mb-2"
-              >Buổi 4</span
+              >Buổi 4 - Điệp viên</span
             >
             <h3
               class="text-lg md:text-xl font-black font-display text-primary mb-2"
@@ -832,7 +828,7 @@
             >
             <span
               class="inline-block bg-primary/20 border border-primary/40 text-primary text-xs font-bold px-2 py-0.5 rounded mb-2"
-              >Buổi 5</span
+              >Buổi 5 - Vũ Trụ Vật Lý</span
             >
             <h3
               class="text-lg md:text-xl font-black font-display text-primary mb-2"
@@ -858,7 +854,7 @@
             >
             <span
               class="inline-block bg-primary/20 border border-primary/40 text-primary text-xs font-bold px-2 py-0.5 rounded mb-2"
-              >Buổi 6</span
+              >Buổi 6 - Vinh Danh</span
             >
             <h3
               class="text-lg md:text-xl font-black font-display text-primary mb-2"
@@ -880,12 +876,21 @@
     </section>
 
     <!-- EXPERT MENTORS -->
-    <section id="ve-chung-toi" class="py-20 bg-white px-6 md:px-12 lg:px-24">
+    <section id="ve-chung-toi" class="py-20 px-6 md:px-12 lg:px-24 bg-[#f2f7fb]">
       <div class="max-w-6xl mx-auto space-y-16">
         <!-- Section Title & Subtitle -->
         <div
-          class="flex flex-col lg:flex-row items-center gap-8 justify-between"
+          class="flex flex-col lg:flex-row items-center gap-20 justify-between"
         >
+         <div
+            class="w-48 h-48 flex items-center justify-center mx-auto bg-primary/10 rounded-full animate-pulse shadow-inner overflow-hidden"
+          >
+            <img
+              src="robot-image.png"
+              alt="Mascot robot"
+              class="w-32 h-32 object-contain"
+            />
+          </div>
           <div class="space-y-4 max-w-2xl text-center lg:text-left">
             <h2
               class="text-3xl md:text-4xl font-black font-display text-secondary tracking-tight"
@@ -893,7 +898,7 @@
               Đội Ngũ Chuyên Gia
             </h2>
             <p class="text-gray-600 text-sm md:text-base leading-relaxed">
-              <strong>Little Da Vinci Tech Academy</strong> được phát triển bởi
+              <strong class="text-secondary font-semibold leading-relaxed">Little Da Vinci Tech Academy</strong> được phát triển bởi
               đội ngũ chuyên gia và mentor có nền tảng trong Robotics, Tự động
               hóa, Khoa học Máy tính và Phát triển phần mềm, từng học tập và làm
               việc tại các môi trường quốc tế.
@@ -908,70 +913,7 @@
             </p>
           </div>
           <!-- Cute Robot Mascot Illustration -->
-          <div
-            class="w-48 h-48 flex items-center justify-center bg-primary/10 rounded-full animate-pulse shadow-inner"
-          >
-            <svg
-              class="w-32 h-32 text-secondary"
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <!-- Head -->
-              <rect
-                x="25"
-                y="20"
-                width="50"
-                height="40"
-                rx="15"
-                fill="currentColor"
-              />
-              <!-- Ears -->
-              <rect x="18" y="32" width="7" height="16" rx="3" fill="#4ade80" />
-              <rect x="75" y="32" width="7" height="16" rx="3" fill="#4ade80" />
-              <!-- Eyes -->
-              <circle cx="40" cy="38" r="7" fill="white" />
-              <circle cx="40" cy="38" r="3" fill="#00c3ff" />
-              <circle cx="60" cy="38" r="7" fill="white" />
-              <circle cx="60" cy="38" r="3" fill="#00c3ff" />
-              <!-- Mouth -->
-              <path
-                d="M42 50 C45 53, 55 53, 58 50"
-                stroke="white"
-                stroke-width="3"
-                stroke-linecap="round"
-              />
-              <!-- Neck -->
-              <rect
-                x="44"
-                y="60"
-                width="12"
-                height="10"
-                rx="2"
-                fill="#4ade80"
-              />
-              <!-- Body -->
-              <rect
-                x="20"
-                y="70"
-                width="60"
-                height="25"
-                rx="10"
-                fill="currentColor"
-              />
-              <!-- Antenna -->
-              <line
-                x1="50"
-                y1="20"
-                x2="50"
-                y2="8"
-                stroke="#4ade80"
-                stroke-width="4"
-                stroke-linecap="round"
-              />
-              <circle cx="50" cy="6" r="4" fill="#4ade80" />
-            </svg>
-          </div>
+         
         </div>
 
         <!-- Mentors Grid -->
@@ -1246,7 +1188,7 @@
               <select
                 id="source"
                 name="source"
-                class="w-full bg-white/10 border border-white/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary font-medium focus:bg-secondary-dark"
+                class="w-full bg-white/10 border border-white/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary font-medium"
               >
                 <option value="Facebook Ads" class="text-gray-800">
                   Facebook Ads
@@ -1255,7 +1197,6 @@
                 <option value="Người thân giới thiệu" class="text-gray-800">
                   Người thân giới thiệu
                 </option>
-                <option value="Khác" class="text-gray-800">Khác</option>
               </select>
             </div>
           </div>
@@ -1266,7 +1207,7 @@
               class="block text-xs font-bold uppercase tracking-wider text-cyan-100"
               >Lịch Học Mong Muốn (Liên Tục 2 Tuần)</label
             >
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <!-- Schedule Option 1 -->
               <label class="relative block cursor-pointer group">
                 <input
@@ -1282,8 +1223,8 @@
                   <span class="block text-xs font-black text-primary uppercase"
                     >Lịch Học 1</span
                   >
-                  <span class="block text-lg font-bold">Thứ 2 - 4 - 6</span>
-                  <span class="block text-sm text-cyan-100">18:00 - 19:30</span>
+                  <span class="block text-lg font-bold">Chiều Thứ 7</span>
+                  <span class="block text-sm text-cyan-100">15:00 - 16:30</span>
                 </div>
               </label>
 
@@ -1301,13 +1242,13 @@
                   <span class="block text-xs font-black text-primary uppercase"
                     >Lịch Học 2</span
                   >
-                  <span class="block text-lg font-bold">Thứ 3 - 5 - 7</span>
-                  <span class="block text-sm text-cyan-100">18:00 - 19:30</span>
+                  <span class="block text-lg font-bold">Chiều Chủ Nhật</span>
+                  <span class="block text-sm text-cyan-100">15:00 - 16:30</span>
                 </div>
               </label>
 
               <!-- Schedule Option 3 -->
-              <label class="relative block cursor-pointer group">
+              <!-- <label class="relative block cursor-pointer group">
                 <input
                   type="radio"
                   name="schedule"
@@ -1323,30 +1264,42 @@
                   <span class="block text-lg font-bold">Sáng Thứ Bảy - CN</span>
                   <span class="block text-sm text-cyan-100">09:00 - 10:30</span>
                 </div>
-              </label>
+              </label> -->
             </div>
           </div>
 
-          <!-- Warning Disclaimer Box -->
+          <!-- Location Information Box -->
           <div
             class="bg-white/5 border border-white/20 p-5 rounded-2xl flex items-start gap-4"
           >
             <span
               class="material-symbols-outlined text-primary text-2xl flex-shrink-0 mt-0.5"
-              >warning</span
+              >location_on</span
             >
             <div class="space-y-1">
               <h4
                 class="font-extrabold text-sm text-primary uppercase tracking-wide"
               >
-                Lưu ý về Địa Điểm Học Offline:
+                Địa điểm học offline:
               </h4>
               <p class="text-xs text-cyan-100 leading-relaxed font-medium">
-                Địa điểm chính thức của lớp học offline sẽ được Ban Tổ Chức trao
-                đổi trực tiếp và xác nhận qua Zalo/Cuộc gọi với ba mẹ dựa trên
-                khu vực thuận tiện nhất cho các học viên đăng ký.
+                Lớp học offline sẽ tổ chức tại 85/1 Nguyễn Phi Khanh, Phường Tân Định, TP.HCM, VN.
               </p>
             </div>
+          </div>
+
+          <div class="mt-4 text-left">
+            <label class="inline-flex items-start gap-3 text-xs text-cyan-100 leading-relaxed font-medium">
+              <input
+                type="checkbox"
+                name="agreement"
+                required
+                class="mt-1 h-10 w-10 rounded border-gray-300 text-primary focus:ring-primary"
+              />
+              <span>
+                Tôi cam kết cho con tham gia đầy đủ buổi học và đồng ý cho phép Ban Tổ Chức sử dụng hình ảnh/video tư liệu học tập của con tại lớp học offline làm tài liệu quảng bá, giới thiệu sản phẩm giáo dục cho cộng đồng.
+              </span>
+            </label>
           </div>
 
           <!-- Submit Button -->
