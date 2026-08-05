@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"encoding/json"
 	"fmt"
 	"html"
 	"log"
@@ -37,11 +38,16 @@ func main() {
 
 	mux := http.NewServeMux()
 
+	apiKey := os.Getenv("API_KEY")
+	if apiKey == "" {
+		logger.Println("WARNING: API_KEY environment variable not set. Endpoint /sync-db/{id} will require API_KEY.")
+	}
+
 	mux.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")
 	})
 	mux.HandleFunc("POST /sign-up", rateLimitMiddleware(limiter, signUp(db)))
-	mux.HandleFunc("GET /sync-db/{id}", syncDb(db))
+	mux.HandleFunc("GET /sync-db/{id}", syncDb(db, apiKey))
 
 	handler := loggingMiddleware(logger)(panicRecoveryMiddleware(logger)(mux))
 
@@ -143,8 +149,80 @@ func signUp(db *sql.DB) http.HandlerFunc {
 	}
 }
 
-func syncDb(db *sql.DB) http.HandlerFunc {
+type Registration struct {
+	ID          int       `json:"id"`
+	Title       string    `json:"title"`
+	ParentName  string    `json:"parent_name"`
+	Phone       string    `json:"phone"`
+	StudentName string    `json:"student_name"`
+	BirthYear   int       `json:"birth_year"`
+	Gender      string    `json:"gender"`
+	Source      string    `json:"source"`
+	CreatedAt   time.Time `json:"created_at"`
+}
+
+func syncDb(db *sql.DB, apiKey string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+
+		if apiKey == "" || r.Header.Get("X-API-Key") != apiKey {
+			w.WriteHeader(http.StatusUnauthorized)
+			json.NewEncoder(w).Encode(map[string]string{"error": "Unauthorized"})
+			return
+		}
+
+		idStr := r.PathValue("id")
+		lastID, err := strconv.Atoi(idStr)
+		if err != nil || lastID < 0 {
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(map[string]string{"error": "Invalid ID parameter"})
+			return
+		}
+
+		query := `SELECT id, title, parent_name, phone, student_name, birth_year, gender, COALESCE(source, ''), created_at
+		          FROM registrations
+		          WHERE id > $1
+		          ORDER BY id ASC`
+
+		rows, err := db.Query(query, lastID)
+		if err != nil {
+			log.Printf("DB error on sync-db: %v", err)
+			w.WriteHeader(http.StatusInternalServerError)
+			json.NewEncoder(w).Encode(map[string]string{"error": "Database error"})
+			return
+		}
+		defer rows.Close()
+
+		registrations := make([]Registration, 0)
+		for rows.Next() {
+			var reg Registration
+			if err := rows.Scan(
+				&reg.ID,
+				&reg.Title,
+				&reg.ParentName,
+				&reg.Phone,
+				&reg.StudentName,
+				&reg.BirthYear,
+				&reg.Gender,
+				&reg.Source,
+				&reg.CreatedAt,
+			); err != nil {
+				log.Printf("Row scan error on sync-db: %v", err)
+				w.WriteHeader(http.StatusInternalServerError)
+				json.NewEncoder(w).Encode(map[string]string{"error": "Error processing data"})
+				return
+			}
+			registrations = append(registrations, reg)
+		}
+
+		if err := rows.Err(); err != nil {
+			log.Printf("Rows error on sync-db: %v", err)
+			w.WriteHeader(http.StatusInternalServerError)
+			json.NewEncoder(w).Encode(map[string]string{"error": "Error processing data"})
+			return
+		}
+
+		json.NewEncoder(w).Encode(registrations)
 	}
 }
 
