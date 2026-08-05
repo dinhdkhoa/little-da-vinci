@@ -38,7 +38,7 @@ func getMigrationSql() string {
     birth_year INT NOT NULL,
     gender VARCHAR(20) NOT NULL,
     source VARCHAR(100),
-    created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT (CURRENT_TIMESTAMP AT TIME ZONE 'Asia/Ho_Chi_Minh')
+    created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT (timezone('Asia/Ho_Chi_Minh', now()))
 	);
 `
 }
