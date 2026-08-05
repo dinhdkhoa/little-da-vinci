@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dw8oghym2/image/upload/v1785913364/favicon_pdzwnp.ico">
 
     <title>Little Da Vinci - Lập Trình Micro:bit</title>
 
@@ -24,6 +24,9 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- HTMX CDN -->
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
 
     <script>
       tailwind.config = {
@@ -396,7 +399,7 @@
     <!-- HERO SECTION -->
       <section class="overflow-hidden">
       <img
-        src="hero.png"
+        src="https://res.cloudinary.com/dw8oghym2/image/upload/v1785913365/hero_iozmgj.webp"
         alt="Trẻ học lập trình Micro:bit"
         class="hero-image"
       />
@@ -886,7 +889,7 @@
             class="w-48 h-48 flex items-center justify-center mx-auto bg-primary/10 rounded-full animate-pulse shadow-inner overflow-hidden"
           >
             <img
-              src="robot-image.png"
+              src="https://res.cloudinary.com/dw8oghym2/image/upload/v1785913365/robot-image_qr89e2.webp"
               alt="Mascot robot"
               class="w-32 h-32 object-contain"
             />
@@ -1065,10 +1068,24 @@
         </div>
 
         <!-- Form Container -->
+        <div id="already-signed-up-banner" class="hidden bg-yellow-500/20 border border-yellow-500/50 text-yellow-100 p-4 rounded-2xl flex items-center justify-between gap-4 font-medium text-sm">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-yellow-400">info</span>
+            <span>Bạn (hoặc thiết bị này) đã từng gửi thông tin đăng ký học trải nghiệm.</span>
+          </div>
+          <button type="button" id="dismiss-banner-btn" class="text-yellow-200 hover:text-white font-bold text-xs uppercase underline">Đóng</button>
+        </div>
+
         <form
           id="registration-form"
+          hx-post="/sign-up"
+          hx-target="#registration-form"
+          hx-swap="outerHTML"
+          hx-indicator="#submit-spinner"
+          hx-disabled-elt="#submit-btn"
           class="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white/20 shadow-2xl space-y-8 text-white"
         >
+          <div id="form-error"></div>
           <!-- Step 1: Personal Info -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Xưng danh / Title -->
@@ -1094,7 +1111,7 @@
               <label
                 for="parent-name"
                 class="block text-xs font-bold uppercase tracking-wider text-cyan-100"
-                >Họ và tên Phụ huynh</label
+                >Họ và tên Phụ huynh <span class="text-red-400">*</span></label
               >
               <input
                 type="text"
@@ -1111,7 +1128,7 @@
               <label
                 for="phone"
                 class="block text-xs font-bold uppercase tracking-wider text-cyan-100"
-                >Số Điện Thoại Liên Hệ (Zalo)</label
+                >Số Điện Thoại Liên Hệ (Zalo) <span class="text-red-400">*</span></label
               >
               <input
                 type="tel"
@@ -1128,7 +1145,7 @@
               <label
                 for="student-name"
                 class="block text-xs font-bold uppercase tracking-wider text-cyan-100"
-                >Họ và Tên Học Sinh</label
+                >Họ và Tên Học Sinh <span class="text-red-400">*</span></label
               >
               <input
                 type="text"
@@ -1145,7 +1162,7 @@
               <label
                 for="birth-year"
                 class="block text-xs font-bold uppercase tracking-wider text-cyan-100"
-                >Năm Sinh Học Sinh</label
+                >Năm Sinh Học Sinh <span class="text-red-400">*</span></label
               >
               <input
                 type="number"
@@ -1164,7 +1181,7 @@
               <label
                 for="gender"
                 class="block text-xs font-bold uppercase tracking-wider text-cyan-100"
-                >Giới Tính Học Sinh</label
+                >Giới Tính Học Sinh <span class="text-red-400">*</span></label
               >
               <select
                 id="gender"
@@ -1297,7 +1314,7 @@
                 class="mt-1 h-10 w-10 rounded border-gray-300 text-primary focus:ring-primary"
               />
               <span>
-                Tôi cam kết cho con tham gia đầy đủ buổi học và đồng ý cho phép Ban Tổ Chức sử dụng hình ảnh/video tư liệu học tập của con tại lớp học offline làm tài liệu quảng bá, giới thiệu sản phẩm giáo dục cho cộng đồng.
+                Tôi cam kết cho con tham gia đầy đủ buổi học và đồng ý cho phép Ban Tổ Chức sử dụng hình ảnh/video tư liệu học tập của con tại lớp học offline làm tài liệu quảng bá, giới thiệu sản phẩm giáo dục cho cộng đồng. <span class="text-red-400">*</span>
               </span>
             </label>
           </div>
@@ -1306,9 +1323,14 @@
           <div class="pt-4 text-center">
             <button
               type="submit"
-              class="w-full md:w-auto bg-primary hover:bg-primary-dark text-secondary font-black py-4 px-12 rounded-2xl shadow-xl hover:shadow-primary/30 transition-all duration-300 text-lg"
+              id="submit-btn"
+              class="w-full md:w-auto bg-primary hover:bg-primary-dark text-secondary font-black py-4 px-12 rounded-2xl shadow-xl hover:shadow-primary/30 transition-all duration-300 text-lg inline-flex items-center justify-center gap-3"
             >
-              Xác Nhận Đăng Ký Học Miễn Phí
+              <span>Xác Nhận Đăng Ký Học Miễn Phí</span>
+              <svg id="submit-spinner" class="htmx-indicator animate-spin -ml-1 mr-3 h-5 w-5 text-secondary inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
             </button>
           </div>
         </form>
@@ -1608,17 +1630,27 @@
         })
       }
 
-      // Form submission handling
-      const form = document.getElementById("registration-form")
-      if (form) {
-        form.addEventListener("submit", (e) => {
-          e.preventDefault()
-          alert(
-            "Cảm ơn ba mẹ đã đăng ký! Little Da Vinci sẽ liên hệ qua Zalo/Cuộc gọi sớm nhất để xác nhận lịch học cho con."
-          )
-          form.reset()
-        })
-      }
+      // LocalStorage & HTMX hooks
+      document.addEventListener("DOMContentLoaded", () => {
+        const banner = document.getElementById("already-signed-up-banner")
+        const dismissBtn = document.getElementById("dismiss-banner-btn")
+
+        if (localStorage.getItem("ldv_signed_up") === "true" && banner) {
+          banner.classList.remove("hidden")
+        }
+
+        if (dismissBtn && banner) {
+          dismissBtn.addEventListener("click", () => {
+            banner.classList.add("hidden")
+          })
+        }
+      })
+
+      document.body.addEventListener("htmx:afterSwap", (evt) => {
+        if (evt.detail.target && evt.detail.target.id === "registration-form" && evt.detail.xhr.status === 200) {
+          localStorage.setItem("ldv_signed_up", "true")
+        }
+      })
     </script>
   </body>
 </html>

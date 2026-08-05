@@ -2,9 +2,13 @@ package main
 
 import (
 	"database/sql"
+	"fmt"
+	"html"
 	"log"
 	"net/http"
 	"os"
+	"strconv"
+	"strings"
 	"time"
 )
 
@@ -19,19 +23,24 @@ func main() {
 
 	db, err := initDb(logger)
 	if err != nil {
-		logger.Fatalf("cant connect to db", err)
+		logger.Fatalf("cant connect to db: %v", err)
 	}
 
 	migrationsql := getMigrationSql()
-	db.Exec(migrationsql)
+	_, err = db.Exec(migrationsql)
+	if err != nil {
+		logger.Printf("Migration warning/error: %v", err)
+	}
 	defer db.Close()
+
+	limiter := newRateLimiter()
 
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")
 	})
-	mux.HandleFunc("POST /sign-up", signUp(db))
+	mux.HandleFunc("POST /sign-up", rateLimitMiddleware(limiter, signUp(db)))
 	mux.HandleFunc("GET /sync-db/{id}", syncDb(db))
 
 	handler := loggingMiddleware(logger)(panicRecoveryMiddleware(logger)(mux))
@@ -52,50 +61,85 @@ func main() {
 	}
 }
 
-func panicRecoveryMiddleware(logger *log.Logger) func(http.Handler) http.Handler {
-	return func(next http.Handler) http.Handler {
-		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			defer func() {
-				if err := recover(); err != nil {
-					logger.Printf("PANIC: %v", err)
-					http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-				}
-			}()
-
-			next.ServeHTTP(w, r)
-		})
-	}
-}
-
-type responseWriter struct {
-	http.ResponseWriter
-	statusCode int
-}
-
-func loggingMiddleware(logger *log.Logger) func(http.Handler) http.Handler {
-	return func(next http.Handler) http.Handler {
-		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			start := time.Now()
-
-			wrapped := &responseWriter{ResponseWriter: w, statusCode: http.StatusOK}
-
-			next.ServeHTTP(wrapped, r)
-
-			duration := time.Since(start)
-			logger.Printf(
-				"%s %s %s %d %v",
-				r.RemoteAddr,
-				r.Method,
-				r.URL.Path,
-				wrapped.statusCode,
-				duration,
-			)
-		})
-	}
-}
 
 func signUp(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		if err := r.ParseForm(); err != nil {
+			w.Header().Set("HX-Retarget", "#form-error")
+			w.Header().Set("HX-Reswap", "innerHTML")
+			w.WriteHeader(http.StatusBadRequest)
+			w.Write([]byte(`<div class="bg-red-500/20 border border-red-500/50 text-red-200 p-4 rounded-xl text-center text-sm font-semibold">
+				Dữ liệu biểu mẫu không hợp lệ.
+			</div>`))
+			return
+		}
+
+		title := strings.TrimSpace(r.FormValue("title"))
+		parentName := strings.TrimSpace(r.FormValue("parentName"))
+		phone := strings.TrimSpace(r.FormValue("phone"))
+		studentName := strings.TrimSpace(r.FormValue("studentName"))
+		birthYearStr := strings.TrimSpace(r.FormValue("birthYear"))
+		gender := strings.TrimSpace(r.FormValue("gender"))
+		source := strings.TrimSpace(r.FormValue("source"))
+
+		var errors []string
+		if parentName == "" {
+			errors = append(errors, "Họ và tên phụ huynh không được để trống.")
+		}
+		if phone == "" {
+			errors = append(errors, "Số điện thoại không được để trống.")
+		}
+		if studentName == "" {
+			errors = append(errors, "Họ và tên học sinh không được để trống.")
+		}
+		birthYear, err := strconv.Atoi(birthYearStr)
+		if err != nil || birthYear < 2005 || birthYear > 2025 {
+			errors = append(errors, "Năm sinh học sinh phải từ 2005 đến 2025.")
+		}
+		if gender == "" {
+			errors = append(errors, "Vui lòng chọn giới tính học sinh.")
+		}
+
+		if len(errors) > 0 {
+			w.Header().Set("HX-Retarget", "#form-error")
+			w.Header().Set("HX-Reswap", "innerHTML")
+			w.WriteHeader(http.StatusUnprocessableEntity)
+			errList := ""
+			for _, e := range errors {
+				errList += fmt.Sprintf("<li>%s</li>", html.EscapeString(e))
+			}
+			w.Write([]byte(fmt.Sprintf(`<div class="bg-red-500/20 border border-red-500/50 text-red-200 p-4 rounded-xl text-sm font-semibold">
+				<ul class="list-disc list-inside space-y-1">%s</ul>
+			</div>`, errList)))
+			return
+		}
+
+		query := `INSERT INTO registrations (title, parent_name, phone, student_name, birth_year, gender, source)
+		          VALUES ($1, $2, $3, $4, $5, $6, $7)`
+		_, err = db.Exec(query, title, parentName, phone, studentName, birthYear, gender, source)
+		if err != nil {
+			log.Printf("DB error on sign-up: %v", err)
+			w.Header().Set("HX-Retarget", "#form-error")
+			w.Header().Set("HX-Reswap", "innerHTML")
+			w.WriteHeader(http.StatusInternalServerError)
+			w.Write([]byte(`<div class="bg-red-500/20 border border-red-500/50 text-red-200 p-4 rounded-xl text-center text-sm font-semibold">
+				Có lỗi hệ thống xảy ra. Vui lòng thử lại sau.
+			</div>`))
+			return
+		}
+
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		w.Write([]byte(fmt.Sprintf(`<div id="registration-form" class="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white/20 shadow-2xl space-y-6 text-center text-white">
+			<div class="w-16 h-16 bg-primary text-secondary rounded-full flex items-center justify-center mx-auto text-3xl font-black">
+				✓
+			</div>
+			<h3 class="text-2xl md:text-3xl font-black font-display text-primary">
+				Đăng Ký Thành Công!
+			</h3>
+			<p class="text-cyan-100 text-base max-w-md mx-auto leading-relaxed">
+				Cảm ơn <strong class="text-white">%s %s</strong> đã đăng ký cho bé <strong class="text-white">%s</strong>! Little Da Vinci sẽ liên hệ qua Zalo/SĐT <strong class="text-white">%s</strong> trong thời gian sớm nhất để xác nhận lớp học.
+			</p>
+		</div>`, html.EscapeString(title), html.EscapeString(parentName), html.EscapeString(studentName), html.EscapeString(phone))))
 	}
 }
 
@@ -103,3 +147,4 @@ func syncDb(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 	}
 }
+
