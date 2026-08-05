@@ -1083,6 +1083,7 @@
           hx-swap="outerHTML"
           hx-indicator="#submit-spinner"
           hx-disabled-elt="#submit-btn"
+          oninvalid="this.reportValidity()"
           class="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white/20 shadow-2xl space-y-8 text-white"
         >
           <div id="form-error"></div>
@@ -1178,10 +1179,10 @@
                 id="birth-year"
                 name="birthYear"
                 placeholder="2015"
-                min="2005"
+                min="1900"
                 max="2025"
                 required
-                oninvalid="this.setCustomValidity('Vui lòng nhập năm sinh học sinh (từ 2005 đến 2025).')"
+                oninvalid="this.setCustomValidity('Vui lòng nhập năm sinh học sinh (từ 1900 đến 2025).')"
                 oninput="this.setCustomValidity('')"
                 class="w-full bg-white/10 border border-white/30 rounded-xl px-4 py-3 placeholder-white/50 text-white focus:outline-none focus:border-primary font-medium"
               />
