@@ -145,6 +145,17 @@ func signUp(db *sql.DB) http.HandlerFunc {
 			<p class="text-cyan-100 text-base max-w-md mx-auto leading-relaxed">
 				Cảm ơn <strong class="text-white">%s %s</strong> đã đăng ký cho bé <strong class="text-white">%s</strong>! Little Da Vinci sẽ liên hệ qua Zalo/SĐT <strong class="text-white">%s</strong> trong thời gian sớm nhất để xác nhận lớp học.
 			</p>
+			<div class="pt-4">
+				<button type="button"
+					hx-get="/"
+					hx-select="#registration-form"
+					hx-target="#registration-form"
+					hx-swap="outerHTML"
+					class="bg-primary hover:bg-primary-dark text-secondary font-bold py-3 px-8 rounded-2xl shadow-lg hover:shadow-primary/30 transition-all duration-300 text-sm inline-flex items-center gap-2 cursor-pointer">
+					<span>Đăng Ký Cho Học Sinh Khác</span>
+					<span class="material-symbols-outlined text-base">add</span>
+				</button>
+			</div>
 		</div>`, html.EscapeString(title), html.EscapeString(parentName), html.EscapeString(studentName), html.EscapeString(phone))))
 	}
 }

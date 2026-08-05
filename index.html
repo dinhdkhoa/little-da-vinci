@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" class="scroll-smooth">
+<html lang="vi" class="scroll-smooth scroll-pt-20">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -105,7 +105,8 @@
   >
     <!-- STICKY HEADER -->
     <header
-      class="w-full bg-neutralBg/95 backdrop-blur-lg py-3 border-b border-gray-200/80 sticky top-0 z-50 shadow-sm transition-all duration-300"
+      id="main-header"
+      class="w-full bg-neutralBg/95 backdrop-blur-lg py-3 border-b border-gray-200/80 sticky top-0 z-50 shadow-sm transition-transform duration-300"
     >
       <div
         class="max-w-6xl mx-auto px-6 md:px-12 lg:px-0 flex items-center justify-between"
@@ -304,7 +305,7 @@
         >
           <a
             class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary"
-            href="#trang-chu"
+            href="#"
             >Trang Chủ</a
           >
           <a
@@ -328,7 +329,7 @@
         <div class="hidden md:flex items-center gap-4">
           <a
             class="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white font-bold py-2 px-6 rounded-lg text-sm transition-all duration-300 shadow-sm"
-            href="#dang-ky"
+            href="#contact"
           >
             Liên Hệ
           </a>
@@ -360,7 +361,7 @@
     >
       <div class="flex flex-col gap-4 text-lg font-bold text-secondary">
         <a
-          href="#trang-chu"
+          href="#"
           class="py-2 border-b border-gray-100 mobile-nav-link"
           >Trang Chủ</a
         >
@@ -503,7 +504,7 @@
               <div
                 class="relative bg-white rounded-xl p-4 border-2 border-gray shadow-sm hover:scale-[1.02]"
               >
-                <p class="text-xs text-gray-700 leading-relaxed font-medium">
+                <p class="text-sm text-gray-700 leading-relaxed font-medium">
                   Trẻ được làm quen với tư duy lập trình thông qua trải nghiệm
                   thực hành trực quan, sinh động.
                 </p>
@@ -517,7 +518,7 @@
               <div
                 class="relative bg-white rounded-xl p-4 border-2 border-gray shadow-sm hover:scale-[1.02]"
               >
-                <p class="text-xs text-gray-700 leading-relaxed font-medium">
+                <p class="text-sm text-gray-700 leading-relaxed font-medium">
                   Phát triển tư duy logic, khả năng giải quyết vấn đề và tính
                   kiên trì qua từng buổi học.
                 </p>
@@ -530,7 +531,7 @@
               <div
                 class="relative bg-white rounded-xl p-4 border-2 border-gray shadow-sm hover:scale-[1.02]"
               >
-                <p class="text-xs text-gray-700 leading-relaxed font-medium">
+                <p class="text-sm text-gray-700 leading-relaxed font-medium">
                   Khuyến khích sự sáng tạo không giới hạn với các dự án cá nhân
                   hóa theo sở thích.
                 </p>
@@ -546,7 +547,7 @@
               <div
                 class="relative bg-white rounded-xl p-4 border-2 border-gray shadow-sm hover:scale-[1.02]"
               >
-                <p class="text-xs text-gray-700 leading-relaxed font-medium">
+                <p class="text-sm text-gray-700 leading-relaxed font-medium">
                   Xây dựng sự tự tin khi tự tay hoàn thành và thuyết trình sản
                   phẩm công nghệ của chính mình.
                 </p>
@@ -559,7 +560,7 @@
               <div
                 class="relative bg-white rounded-xl p-4 border-2 border-gray shadow-sm hover:scale-[1.02]"
               >
-                <p class="text-xs text-gray-700 leading-relaxed font-medium">
+                <p class="text-sm text-gray-700 leading-relaxed font-medium">
                   Tạo nền tảng vững chắc để trẻ tự tin tiếp cận công nghệ và
                   định hướng tương lai.
                 </p>
@@ -1097,16 +1098,15 @@
               <label
                 for="title"
                 class="block text-xs font-bold uppercase tracking-wider text-cyan-100"
-                >X.D.</label
+                >Dang Xưng</label
               >
               <select
                 id="title"
                 name="title"
                 class="w-full bg-white/10 border border-white/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary font-medium "
               >
-                <option value="Mr." class="text-gray-800">Mr.</option>
-                <option value="Ms." class="text-gray-800">Ms.</option>
-                <option value="Mrs." class="text-gray-800">Mrs.</option>
+                <option value="Anh" class="text-gray-800">Anh</option>
+                <option value="Chị" class="text-gray-800">Chị</option>
               </select>
             </div>
 
@@ -1140,7 +1140,7 @@
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="+84 111222334"
+                placeholder="0912345678"
                 required
                 oninvalid="this.setCustomValidity('Vui lòng nhập số điện thoại liên hệ (Zalo).')"
                 oninput="this.setCustomValidity('')"
@@ -1206,7 +1206,6 @@
                 <option value="" class="text-gray-800">-- Chọn --</option>
                 <option value="Nam" class="text-gray-800">Nam</option>
                 <option value="Nữ" class="text-gray-800">Nữ</option>
-                <option value="Khác" class="text-gray-800">Khác</option>
               </select>
             </div>
 
@@ -1222,13 +1221,14 @@
                 name="source"
                 class="w-full bg-white/10 border border-white/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary font-medium"
               >
+                    <option value="Người thân giới thiệu" class="text-gray-800">
+                  Người thân giới thiệu
+                </option>
                 <option value="Facebook Ads" class="text-gray-800">
                   Facebook Ads
                 </option>
                 <option value="Website" class="text-gray-800">Website</option>
-                <option value="Người thân giới thiệu" class="text-gray-800">
-                  Người thân giới thiệu
-                </option>
+            
               </select>
             </div>
           </div>
@@ -1314,8 +1314,8 @@
               >
                 Địa điểm học offline:
               </h4>
-              <p class="text-xs text-cyan-100 leading-relaxed font-medium">
-                Lớp học offline sẽ tổ chức tại 85/1 Nguyễn Phi Khanh, Phường Tân Định, TP.HCM, VN.
+              <p class="text-sm text-cyan-100 leading-relaxed font-medium">
+                Lớp học offline sẽ tổ chức tại Tòa nhà EduFin: <a href="https://maps.app.goo.gl/TW86uWv4qdsPT27t7" target="_blank" class="text-primary hover:underline">85/1 Nguyễn Phi Khanh, Phường Tân Định, TP.HCM, VN</a>
               </p>
             </div>
           </div>
@@ -1341,10 +1341,10 @@
             <button
               type="submit"
               id="submit-btn"
-              class="w-full md:w-auto bg-primary hover:bg-primary-dark text-secondary font-black py-4 px-12 rounded-2xl shadow-xl hover:shadow-primary/30 transition-all duration-300 text-lg inline-flex items-center justify-center gap-3"
+              class="relative w-full md:w-auto bg-primary hover:bg-primary-dark text-secondary font-black py-4 px-12 rounded-2xl shadow-xl hover:shadow-primary/30 transition-all duration-300 text-lg inline-flex items-center justify-center"
             >
               <span>Xác Nhận Đăng Ký Học Miễn Phí</span>
-              <svg id="submit-spinner" class="htmx-indicator animate-spin -ml-1 mr-3 h-5 w-5 text-secondary inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <svg id="submit-spinner" class="htmx-indicator animate-spin absolute right-4 md:right-6 h-5 w-5 text-secondary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
@@ -1358,7 +1358,7 @@
     <footer
       class="bg-secondary-dark text-white pt-16 pb-8 px-6 md:px-12 lg:px-24 border-t border-white/15"
     >
-      <div class="max-w-6xl mx-auto space-y-12">
+      <div class="max-w-6xl mx-auto space-y-12" id="contact">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
           <!-- Left: Logo & copyright -->
           <div class="space-y-4">
@@ -1544,7 +1544,7 @@
 
           <!-- Middle: Links -->
           <div class="flex flex-col gap-3 font-semibold text-cyan-100 text-sm">
-            <a class="hover:text-primary transition-colors" href="#trang-chu"
+            <a class="hover:text-primary transition-colors" href="#"
               >Trang Chủ</a
             >
             <a class="hover:text-primary transition-colors" href="#tai-sao-hoc"
@@ -1566,20 +1566,8 @@
               Liên Hệ Với Chúng Tôi
             </h4>
             <div class="flex items-center gap-3">
-              <!-- Facebook link mock -->
               <a
-                href="#"
-                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-secondary transition-all"
-              >
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
-                  />
-                </svg>
-              </a>
-              <!-- Zalo Link mock -->
-              <a
-                href="#"
+                href="https://zalo.me/0337399579"
                 class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-secondary transition-all text-xs font-bold font-display"
               >
                 Zalo
@@ -1588,7 +1576,7 @@
             <div class="text-cyan-100 text-sm space-y-2">
               <p class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-base">phone</span>
-                Hotline: 0337 399 579
+                Hotline: <a href="tel:0337399579" class="hover:text-primary transition-colors font-semibold">0337399579</a>
               </p>
               <p class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-base">mail</span>
@@ -1646,6 +1634,32 @@
           })
         })
       }
+
+      // Hide header on scroll down, show on scroll up (Mobile only < 768px)
+      let lastScrollY = window.scrollY;
+      const header = document.getElementById("main-header");
+
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+        if (!header) return;
+
+        if (window.innerWidth < 768) {
+          if (currentScrollY > lastScrollY && currentScrollY > 80) {
+            header.classList.add("-translate-y-full");
+          } else {
+            header.classList.remove("-translate-y-full");
+          }
+        } else {
+          header.classList.remove("-translate-y-full");
+        }
+        lastScrollY = currentScrollY;
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768 && header) {
+          header.classList.remove("-translate-y-full");
+        }
+      });
 
       // LocalStorage & HTMX hooks
       document.addEventListener("DOMContentLoaded", () => {
