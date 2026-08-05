@@ -7,9 +7,13 @@
 
     <title>Little Da Vinci - Lập Trình Micro:bit</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link
+      rel="preload"
+      as="image"
+      href="https://res.cloudinary.com/dw8oghym2/image/upload/v1785913365/hero_iozmgj.webp"
+      fetchpriority="high"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
@@ -398,11 +402,14 @@
     </div>
 
     <!-- HERO SECTION -->
-      <section class="overflow-hidden">
+    <section class="overflow-hidden min-h-[220px] sm:min-h-[350px] md:min-h-[480px]">
       <img
         src="https://res.cloudinary.com/dw8oghym2/image/upload/v1785913365/hero_iozmgj.webp"
         alt="Trẻ học lập trình Micro:bit"
         class="hero-image"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async"
       />
     </section>
 
