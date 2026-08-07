@@ -1192,7 +1192,6 @@
                 onchange="this.setCustomValidity('')"
                 class="w-full bg-white/10 border border-white/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary font-medium "
               >
-                <option value="" class="text-gray-800">-- Chọn --</option>
                 <option value="Nam" class="text-gray-800">Nam</option>
                 <option value="Nữ" class="text-gray-800">Nữ</option>
               </select>
@@ -1222,70 +1221,34 @@
             </div>
           </div>
 
-          <!-- Step 2: Schedule Selection -->
-          <div class="space-y-4">
-            <label
-              class="block text-xs font-bold uppercase tracking-wider text-cyan-100"
-              >Lịch Học Mong Muốn (Liên Tục 2 Tuần)</label
-            >
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <!-- Schedule Option 1 -->
-              <label class="relative block cursor-pointer group">
-                <input
-                  type="radio"
-                  name="schedule"
-                  value="schedule-1"
-                  checked
-                  class="sr-only peer"
-                />
-                <div
-                  class="bg-white/5 border border-white/20 peer-checked:border-primary peer-checked:bg-white/15 rounded-2xl p-6 transition-all group-hover:bg-white/10 space-y-2"
-                >
-                  <span class="block text-xs font-black text-primary uppercase"
-                    >Lịch Học 1</span
-                  >
-                  <span class="block text-lg font-bold">Chiều Thứ 7</span>
-                  <span class="block text-sm text-cyan-100">15:00 - 16:30</span>
-                </div>
-              </label>
+          <!-- Schedule Information Card -->
+          <div class="bg-white/5 border border-white/20 rounded-3xl p-5 md:p-6 text-gray-900 shadow-xl flex items-center gap-4 md:gap-6">
+            <!-- Left Icon with Vertical Line -->
+            <div class="flex items-center gap-4 md:gap-6 pr-4 md:pr-6 border-r border-gray-200 flex-shrink-0">
+              <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/20   flex items-center justify-center text-primary flex-shrink-0">
+                <span class="material-symbols-outlined text-2xl md:text-3xl">calendar_month</span>
+              </div>
+            </div>
 
-              <!-- Schedule Option 2 -->
-              <label class="relative block cursor-pointer group">
-                <input
-                  type="radio"
-                  name="schedule"
-                  value="schedule-2"
-                  class="sr-only peer"
-                />
-                <div
-                  class="bg-white/5 border border-white/20 peer-checked:border-primary peer-checked:bg-white/15 rounded-2xl p-6 transition-all group-hover:bg-white/10 space-y-2"
-                >
-                  <span class="block text-xs font-black text-primary uppercase"
-                    >Lịch Học 2</span
-                  >
-                  <span class="block text-lg font-bold">Chiều Chủ Nhật</span>
-                  <span class="block text-sm text-cyan-100">15:00 - 16:30</span>
+            <!-- Schedule Details -->
+            <div class="space-y-1 min-w-0 flex-1">
+              <span class="block text-primary font-bold text-sm tracking-wide">Lịch Học</span>
+              
+              <div class="flex flex-wrap items-center gap-2 md:gap-3 text-base md:text-xl font-extrabold text-white">
+                <span>Thứ 7 - Chủ Nhật</span>
+                <span class="text-gray-300 font-light">|</span>
+                <div class="inline-flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-emerald-500 text-lg md:text-xl">schedule</span>
+                  <span>15:00 - 16:30</span>
                 </div>
-              </label>
+              </div>
 
-              <!-- Schedule Option 3 -->
-              <!-- <label class="relative block cursor-pointer group">
-                <input
-                  type="radio"
-                  name="schedule"
-                  value="schedule-3"
-                  class="sr-only peer"
-                />
-                <div
-                  class="bg-white/5 border border-white/20 peer-checked:border-primary peer-checked:bg-white/15 rounded-2xl p-6 transition-all group-hover:bg-white/10 space-y-2"
-                >
-                  <span class="block text-xs font-black text-primary uppercase"
-                    >Lịch Học 3</span
-                  >
-                  <span class="block text-lg font-bold">Sáng Thứ Bảy - CN</span>
-                  <span class="block text-sm text-cyan-100">09:00 - 10:30</span>
-                </div>
-              </label> -->
+              <div class="pt-1">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-primary text-secondary rounded-xl text-xs md:text-sm font-bold">
+                  <span class="material-symbols-outlined text-base text-secondary">event</span>
+                  <span>Từ 12/9 - 27/9</span>
+                </span>
+              </div>
             </div>
           </div>
 
