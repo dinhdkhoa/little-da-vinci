@@ -44,6 +44,7 @@ func main() {
 	}
 
 	mux.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Cache-Control", "no-cache")
 		http.ServeFile(w, r, "index.html")
 	})
 	mux.HandleFunc("POST /sign-up", rateLimitMiddleware(limiter, signUp(db)))
@@ -66,7 +67,6 @@ func main() {
 		logger.Fatalf("Server failed to start: %v", err)
 	}
 }
-
 
 func signUp(db *sql.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -236,4 +236,3 @@ func syncDb(db *sql.DB, apiKey string) http.HandlerFunc {
 		json.NewEncoder(w).Encode(registrations)
 	}
 }
-
