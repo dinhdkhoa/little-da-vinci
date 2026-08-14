@@ -47,6 +47,10 @@ func main() {
 		w.Header().Set("Cache-Control", "no-cache")
 		http.ServeFile(w, r, "index.html")
 	})
+	mux.HandleFunc("GET /dev", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Cache-Control", "no-cache")
+		http.ServeFile(w, r, "dev.html")
+	})
 	mux.HandleFunc("POST /sign-up", rateLimitMiddleware(limiter, signUp(db)))
 	mux.HandleFunc("GET /sync-db/{id}", syncDb(db, apiKey))
 
