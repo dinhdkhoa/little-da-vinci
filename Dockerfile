@@ -14,6 +14,7 @@ WORKDIR /app
 
 COPY --from=builder /app/server .
 COPY --from=builder /app/index.html .
+COPY --from=builder /app/dev.html .
 
 EXPOSE 8080
 
