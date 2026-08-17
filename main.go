@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"html"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"strconv"
@@ -45,6 +46,14 @@ func main() {
 
 	mux.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Cache-Control", "no-cache")
+		go func() {
+			ip := GetClientIP(r)
+			if ip == "" || ip == "::1" {
+				return
+			}
+			query := `INSERT INTO ip_logs (ip) VALUES ($1)`
+			db.Exec(query, ip)
+		}()
 		http.ServeFile(w, r, "index.html")
 	})
 	// mux.HandleFunc("GET /dev", func(w http.ResponseWriter, r *http.Request) {
@@ -70,6 +79,30 @@ func main() {
 	if err := server.ListenAndServe(); err != nil {
 		logger.Fatalf("Server failed to start: %v", err)
 	}
+}
+
+func GetClientIP(r *http.Request) string {
+	// 1. Check X-Forwarded-For (Traefik/Caddy appends client IP here first)
+	xForwardedFor := r.Header.Get("X-Forwarded-For")
+	if xForwardedFor != "" {
+		// X-Forwarded-For can be a comma-separated list: "client, proxy1, proxy2"
+		ips := strings.Split(xForwardedFor, ",")
+		clientIP := strings.TrimSpace(ips[0])
+		if clientIP != "" {
+			return clientIP
+		}
+	}
+
+	xRealIP := r.Header.Get("X-Real-IP")
+	if xRealIP != "" {
+		return strings.TrimSpace(xRealIP)
+	}
+
+	ip, _, err := net.SplitHostPort(r.RemoteAddr)
+	if err != nil {
+		return r.RemoteAddr
+	}
+	return ip
 }
 
 func signUp(db *sql.DB) http.HandlerFunc {
@@ -124,9 +157,14 @@ func signUp(db *sql.DB) http.HandlerFunc {
 			return
 		}
 
-		query := `INSERT INTO registrations (title, parent_name, phone, student_name, birth_year, gender, source)
-		          VALUES ($1, $2, $3, $4, $5, $6, $7)`
-		_, err = db.Exec(query, title, parentName, phone, studentName, birthYear, gender, source)
+		ip := GetClientIP(r)
+		if ip == "::1" {
+			ip = "local"
+		}
+
+		query := `INSERT INTO registrations (title, parent_name, phone, student_name, birth_year, gender, source, ip)
+		          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`
+		_, err = db.Exec(query, title, parentName, phone, studentName, birthYear, gender, source, ip)
 		if err != nil {
 			log.Printf("DB error on sign-up: %v", err)
 			w.Header().Set("HX-Retarget", "#form-error")
@@ -173,6 +211,7 @@ type Registration struct {
 	BirthYear   int       `json:"birth_year"`
 	Gender      string    `json:"gender"`
 	Source      string    `json:"source"`
+	Ip          string    `json:"ip"`
 	CreatedAt   time.Time `json:"created_at"`
 }
 
@@ -194,7 +233,7 @@ func syncDb(db *sql.DB, apiKey string) http.HandlerFunc {
 			return
 		}
 
-		query := `SELECT id, title, parent_name, phone, student_name, birth_year, gender, COALESCE(source, ''), created_at
+		query := `SELECT id, title, parent_name, phone, student_name, birth_year, gender, COALESCE(source, ''), COALESCE(ip, ''), created_at
 		          FROM registrations
 		          WHERE id > $1
 		          ORDER BY id ASC`
@@ -220,6 +259,7 @@ func syncDb(db *sql.DB, apiKey string) http.HandlerFunc {
 				&reg.BirthYear,
 				&reg.Gender,
 				&reg.Source,
+				&reg.Ip,
 				&reg.CreatedAt,
 			); err != nil {
 				log.Printf("Row scan error on sync-db: %v", err)

@@ -38,6 +38,15 @@ func getMigrationSql() string {
     birth_year INT NOT NULL,
     gender VARCHAR(20) NOT NULL,
     source VARCHAR(100),
+	ip VARCHAR(20),
+    created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT (timezone('Asia/Ho_Chi_Minh', now()))
+	);
+
+	ALTER TABLE registrations ADD COLUMN IF NOT EXISTS ip VARCHAR(20);
+
+	CREATE TABLE IF NOT EXISTS ip_logs (
+    id SERIAL PRIMARY KEY,
+	ip VARCHAR(20),
     created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT (timezone('Asia/Ho_Chi_Minh', now()))
 	);
 `
@@ -57,4 +66,3 @@ func checkDuplicate(db *sql.DB, title, parentName, phone, studentName string, bi
 	err := db.QueryRow(query, title, parentName, phone, studentName, birthYear, gender).Scan(&exists)
 	return exists, err
 }
-
